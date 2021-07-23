@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class InGameUI : MonoBehaviour
 {
+
+    public GameObject ingameMenu;
     public void ReturnMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
@@ -16,7 +18,7 @@ public class InGameUI : MonoBehaviour
         switch (value)
         {
             case 0:
-                QualitySettings.SetQualityLevel(0, true);
+                QualitySettings.SetQualityLevel(1, true);
                 break;
             case 1:
                 QualitySettings.SetQualityLevel(3, true);
@@ -35,5 +37,17 @@ public class InGameUI : MonoBehaviour
                 //     QualitySettings.SetQualityLevel(5, true);
                 //     break;
         }
+    }
+
+    public void OnPause()
+    {
+        Time.timeScale = 0;
+        ingameMenu.SetActive(true);
+    }
+
+    public void OnResume()
+    {
+        Time.timeScale = 1f;
+        ingameMenu.SetActive(false);
     }
 }
