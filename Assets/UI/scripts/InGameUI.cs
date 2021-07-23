@@ -18,7 +18,7 @@ public class InGameUI : MonoBehaviour
         switch (value)
         {
             case 0:
-                QualitySettings.SetQualityLevel(0, true);
+                QualitySettings.SetQualityLevel(1, true);
                 break;
             case 1:
                 QualitySettings.SetQualityLevel(3, true);
