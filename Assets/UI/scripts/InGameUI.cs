@@ -7,6 +7,30 @@ public class InGameUI : MonoBehaviour
 {
 
     public GameObject ingameMenu;
+
+    public GameObject camera;
+    private bool paused = false;
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!paused)
+            {
+                this.paused = true;
+                Time.timeScale = 0;
+                ingameMenu.SetActive(true);
+                //disable first person look
+                camera.GetComponent<FirstPersonLook>().enabled = false;
+
+            }
+            else
+            {
+                OnResume();
+            }
+        }
+    }
     public void ReturnMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
@@ -45,9 +69,13 @@ public class InGameUI : MonoBehaviour
         ingameMenu.SetActive(true);
     }
 
+
     public void OnResume()
     {
         Time.timeScale = 1f;
+        this.paused = false;
         ingameMenu.SetActive(false);
+        //enable first person look
+        camera.GetComponent<FirstPersonLook>().enabled = true;
     }
 }
