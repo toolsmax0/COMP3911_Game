@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class InGameUI : MonoBehaviour
 {
-
     public GameObject ingameMenu;
 
     public GameObject camera;
@@ -18,12 +17,7 @@ public class InGameUI : MonoBehaviour
         {
             if (!paused)
             {
-                this.paused = true;
-                Time.timeScale = 0;
-                ingameMenu.SetActive(true);
-                //disable first person look
-                camera.GetComponent<FirstPersonLook>().enabled = false;
-
+                OnPause();
             }
             else
             {
@@ -44,9 +38,11 @@ public class InGameUI : MonoBehaviour
             case 0:
                 QualitySettings.SetQualityLevel(1, true);
                 break;
+
             case 1:
                 QualitySettings.SetQualityLevel(3, true);
                 break;
+
             case 2:
                 QualitySettings.SetQualityLevel(5, true);
                 break;
@@ -65,10 +61,13 @@ public class InGameUI : MonoBehaviour
 
     public void OnPause()
     {
+        this.paused = true;
         Time.timeScale = 0;
         ingameMenu.SetActive(true);
+        //disable first person look
+        camera.GetComponent<FirstPersonLook>().enabled = false;
+        Cursor.lockState = CursorLockMode.Confined;
     }
-
 
     public void OnResume()
     {
@@ -77,5 +76,6 @@ public class InGameUI : MonoBehaviour
         ingameMenu.SetActive(false);
         //enable first person look
         camera.GetComponent<FirstPersonLook>().enabled = true;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
