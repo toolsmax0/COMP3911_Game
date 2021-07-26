@@ -8,6 +8,8 @@ public class RayDetect : MonoBehaviour
 
     private Vector3 offset = new Vector3(0, 0, 1);//offset, 深度为相机前方1m
     private Transform prevLifted = null;
+    private Transform crtLifted = null;
+    private bool lifting = false;
 
     void Start()
     {
@@ -24,8 +26,6 @@ public class RayDetect : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             Transform objectHit = hit.transform;
-            //change the out glow color of the object hit
-            //todo
 
             // Do something with the object that was hit by the raycast.
             Debug.Log(objectHit.name);
@@ -33,25 +33,37 @@ public class RayDetect : MonoBehaviour
             if (Input.GetKey(KeyCode.E))
             {
                 //determine if the object is rigidbody
-                if (objectHit.GetComponent<Rigidbody>() != null && WithInRange(objectHit.transform.position, Player.transform.position, 2))
+                if (objectHit.GetComponent<Rigidbody>() != null && !lifting)
                 {
+                    lifting = true;//avoid lift two object at the same time
                     prevLifted = objectHit;
+                    crtLifted = objectHit;
+                }
+                if (WithInRange(crtLifted.transform.position, Player.transform.position, 2))
+                {
+                    //change the out glow color of the object hit
+                    crtLifted.GetComponent<Outline>().OutlineColor = Color.green;
+
+                    //get the location from screen coordinate to world coordinate
                     Vector3 transformed = camera.ScreenToWorldPoint(center + offset);
-                    //move the object together with player
-                    // objectHit.transform.position = Player.transform.position + offset;
                     //disable rotation
-                    objectHit.transform.rotation = Quaternion.identity;
+                    crtLifted.transform.rotation = Quaternion.identity;
                     //temporary disable gravity
-                    objectHit.GetComponent<Rigidbody>().useGravity = false;
-                    objectHit.transform.position = transformed;
+                    crtLifted.GetComponent<Rigidbody>().useGravity = false;
+                    crtLifted.transform.position = transformed;
                 }
             }
         }
         if (prevLifted != null)
         {
             if (!WithInRange(prevLifted.transform.position, Player.transform.position, 2) || (!Input.GetKey(KeyCode.E)))
+            {
                 //release the object
+                lifting = false;
                 prevLifted.GetComponent<Rigidbody>().useGravity = true;
+                prevLifted.GetComponent<Outline>().OutlineColor = Color.white;
+
+            }
         }
     }
     bool WithInRange(Vector3 position1, Vector3 position2, float range)
