@@ -2535,6 +2535,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1409045276}
+  - component: {fileID: 1409045277}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -2556,6 +2557,19 @@ Transform:
   m_Father: {fileID: 1917241890}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1409045277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409045275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65928fe093f8da245b1cf747e53db955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPC: {fileID: 100002, guid: dc0ee9afdd0919e448e761c2604062c3, type: 3}
 --- !u!1 &1441995720 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2220566571086255237, guid: e6d9196edeed6a44e946b3c5df34ae1a,
@@ -2588,26 +2602,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4982882, y: 0.90466905, z: 2.0346854}
   m_Center: {x: 0.0000011622906, y: 0.00000051409006, z: 0.000000059604645}
---- !u!1 &1484707518 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100002, guid: dc0ee9afdd0919e448e761c2604062c3,
-    type: 3}
-  m_PrefabInstance: {fileID: 2062292394}
-  m_PrefabAsset: {fileID: 0}
---- !u!136 &1484707519
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1484707518}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1492981335
 GameObject:
   m_ObjectHideFlags: 0
@@ -3244,9 +3238,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1917241890}
-  - component: {fileID: 1917241889}
-  - component: {fileID: 1917241888}
-  - component: {fileID: 1917241887}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -3254,48 +3245,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1917241887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1917241886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65928fe093f8da245b1cf747e53db955, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NPC: {fileID: 100002, guid: dc0ee9afdd0919e448e761c2604062c3, type: 3}
-  SPoint: {fileID: 1409045276}
-  NumNPC: 0
---- !u!114 &1917241888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1917241886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 765181c9ef4b24d32a4f7cbd2ef370dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1917241889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1917241886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"declarations":{"collection":{"$content":[{"name":"NumNPC","value":{"$content":0,"$type":"System.Int32"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
 --- !u!4 &1917241890
 Transform:
   m_ObjectHideFlags: 0
