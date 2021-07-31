@@ -7125,7 +7125,6 @@ Transform:
   - {fileID: 610201465}
   - {fileID: 207729661}
   - {fileID: 615115752}
-  - {fileID: 1214925704}
   - {fileID: 984934704}
   m_Father: {fileID: 0}
   m_RootOrder: 6
