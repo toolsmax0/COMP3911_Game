@@ -13,6 +13,7 @@ public class SummonNPC : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         StartCoroutine("Spawn");
     }
 
@@ -28,7 +29,12 @@ public class SummonNPC : MonoBehaviour
             float p = (float)NumNPC / MaxNPC;
             if (Random.Range(0f, 1f) > p)
             {
-                Instantiate (NPC, transform);
+                //find player, for test purpose
+                Transform des = GameObject.FindGameObjectWithTag("Player").transform;
+
+                GameObject npc = Instantiate(NPC, transform);
+                //set NPC destination
+                npc.GetComponent<DemoNavigation>().target = des;
                 NumNPC++;
             }
             yield return new WaitForSeconds(3);
