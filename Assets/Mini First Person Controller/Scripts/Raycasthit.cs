@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class DoorTriggerButton : MonoBehaviour
+public class Raycasthit : MonoBehaviour
 {
     [SerializeField] private Dooranimated door;
 
@@ -12,15 +12,13 @@ public class DoorTriggerButton : MonoBehaviour
     private Animator animator;
     private bool opened = false;
 
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-    }
 
-    private void Update()
+
+    void Update()
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, _maxDistance))
+        {
             if (hit.transform.tag == "Door" && Input.GetMouseButtonDown(0))
             {
                 if (opened == false)
@@ -33,7 +31,7 @@ public class DoorTriggerButton : MonoBehaviour
                     opened = false;
                     door.CloseDoor();
                 }
+            }
         }
-        
     }
 }
