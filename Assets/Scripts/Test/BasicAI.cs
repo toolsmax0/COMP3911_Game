@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-public class DemoNavigation : MonoBehaviour
+public class BasicAI : MonoBehaviour
 {
     public Transform target;
     // private Animator animator;
@@ -17,13 +17,13 @@ public class DemoNavigation : MonoBehaviour
     {
         if (target != null)
         {
-            //if distance less than 1m, stop moving
+            //if distance less than 2m, stop moving
 
-            if (Vector3.Distance(transform.position, target.position) < 1f)
+            if (Vector3.Distance(transform.position, target.position) <= 2.1f)
             {
                 Debug.Log("Arrived at target");
                 //change animation to idle
-                animation.Play("idle");
+                animation.Play("Idle");
                 // animator.SetBool("Arrived", true);
                 // animator.SetBool("IsMoving", false);
             }

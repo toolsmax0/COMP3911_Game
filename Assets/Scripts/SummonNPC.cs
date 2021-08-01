@@ -34,7 +34,7 @@ public class SummonNPC : MonoBehaviour
 
                 GameObject npc = Instantiate(NPC, transform);
                 //set NPC destination
-                npc.GetComponent<DemoNavigation>().target = des;
+                npc.GetComponent<BasicAI>().target = des;
                 NumNPC++;
             }
             yield return new WaitForSeconds(3);
