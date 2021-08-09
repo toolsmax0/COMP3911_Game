@@ -11,7 +11,7 @@ public class SettingPanel : BasePanel
 
     public override void OnEnter()
     {
-        UITool.GetOrAddComponentInChildren<Button>("BtnExit").onClick.AddListener(() =>
+        UITool.GetOrAddComponentInChildren<Button>("BtnBack").onClick.AddListener(() =>
         {
             PanelManager.Pop();
         });
