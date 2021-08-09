@@ -8,12 +8,12 @@ using UnityEngine;
 public abstract class SceneState
 {
     /// <summary>
-    /// The operation performed when the scenario enters
+    /// The operation performed when the scene enters
     /// </summary>
     public abstract void OnEnter();
 
     /// <summary>
-    /// Operations performed when a scenario exits
+    /// Operations performed when a scene exits
     /// </summary>
     public abstract void OnExit();
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Scenario status management system
+/// Scene status management system
 /// </summary>
 public class SceneSystem
 {
@@ -13,7 +13,7 @@ public class SceneSystem
     SceneState sceneState;
 
     /// <summary>
-    /// Set the current scenario and enter the current scenario
+    /// Set the current scene and enter the current scene
     /// </summary>
     /// <param name="state"></param>
     public void SetScene(SceneState state)

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// Start scenario
+/// Start scene
 /// </summary>
 public class StartScene : SceneState
 {
