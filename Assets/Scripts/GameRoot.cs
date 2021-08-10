@@ -10,7 +10,7 @@ public class GameRoot : MonoBehaviour
 {
     public static GameRoot Instance { get; private set; }
     /// <summary>
-    /// Scenario manager
+    /// Scene manager
     /// </summary>
     public SceneSystem SceneSystem { get; private set; }
     /// <summary>
