@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class InGameUI : MonoBehaviour
 {
     public GameObject ingameMenu;
+    public GameObject cashMenu;
 
     public GameObject camera;
     private bool paused = false;
@@ -22,6 +23,17 @@ public class InGameUI : MonoBehaviour
             else
             {
                 OnResume();
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (!paused)
+            {
+                ToTask();
+            }
+            else
+            {
+                OutTask();
             }
         }
     }
@@ -57,6 +69,26 @@ public class InGameUI : MonoBehaviour
                 //     QualitySettings.SetQualityLevel(5, true);
                 //     break;
         }
+    }
+
+    public void ToTask()
+    {
+        this.paused = true;
+        Time.timeScale = 0;
+        cashMenu.SetActive(true);
+        //disable first person look
+        camera.GetComponent<FirstPersonLook>().enabled = false;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    public void OutTask()
+    {
+        Time.timeScale = 1f;
+        this.paused = false;
+        cashMenu.SetActive(false);
+        //enable first person look
+        camera.GetComponent<FirstPersonLook>().enabled = true;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void OnPause()
