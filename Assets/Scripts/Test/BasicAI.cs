@@ -21,7 +21,7 @@ public class BasicAI : MonoBehaviour
 
             if (Vector3.Distance(transform.position, target.position) <= 2.1f)
             {
-                Debug.Log("Arrived at target");
+                // Debug.Log("Arrived at target");
                 //change animation to idle
                 animation.Play("Idle");
                 // animator.SetBool("Arrived", true);
