@@ -21,6 +21,7 @@ public class Customer : MonoBehaviour
         yield return new WaitForSeconds(startTime);
 
         script.GetComponent<MicrophoneCapture>().StartCapture();
+        Debug.Log("Start");
         StartCoroutine(StopCaptureAfterTime(Endtime));
     }
 
@@ -29,6 +30,7 @@ public class Customer : MonoBehaviour
         yield return new WaitForSeconds(Endtime);
 
         script.GetComponent<MicrophoneCapture>().StopCapture();
+        Debug.Log("Stop");
     }
 
 }
