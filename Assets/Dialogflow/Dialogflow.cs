@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 
 public class Dialogflow : MonoBehaviour
 {
-    public GameObject customer;
+    public static GameObject customer = null;
     //Detect intent with audio input(speech) using Dialogflow API
     //Reference: https://cloud.google.com/dialogflow/es/docs/how/detect-intent-audio#detect-intent-audio-drest
     public IEnumerator Request(byte[] speech)
@@ -49,24 +49,24 @@ public class Dialogflow : MonoBehaviour
             Debug.Log(content.queryResult.fulfillmentText);
             if (content.queryResult.fulfillmentText != null)
             {
-                // if (content.queryResult.intent.displayName == "q1")
+                if (content.queryResult.intent.displayName == "q1")
                 {
                     StartCoroutine(this.GetComponent<TextToSpeech>().Request(content.queryResult.fulfillmentText)); //Text-to-Speech Request
                     StartCoroutine(customer.GetComponent<Customer>().StartCaptureAfterTime(3,4));
                 }
-                if (content.queryResult.intent.displayName == "q2")
+                if (content.queryResult.intent.displayName == "q2+")
                 {
                     StartCoroutine(this.GetComponent<TextToSpeech>().Request(content.queryResult.fulfillmentText));
-                    customer.transform.Rotate(0f, -90f, 0.0f);
-                    // customer.GetComponent<Customer>().anim.Play("Walk");
-                    // customer.GetComponent<Customer>().walk = true;
+                    StartCoroutine(customer.GetComponent<Customer>().StartCaptureAfterTime(4,4));
+                }
+                if (content.queryResult.intent.displayName == "credit")
+                {
+                    StartCoroutine(customer.GetComponent<Customer>().Leave(3));
                 }
             }
             else
             {
-                customer.transform.Rotate(0f, 180f, 0.0f);
-                // customer.GetComponent<Customer>().anim.Play("Walk");
-                // customer.GetComponent<Customer>().walk = true;
+                StartCoroutine(this.GetComponent<TextToSpeech>().Request("我没有听清楚你在说什么。"));
             }
         }
         req.Dispose();
