@@ -19,7 +19,7 @@ public class BasicAI : MonoBehaviour
         {
             //if distance less than 2m, stop moving
 
-            if (Vector3.Distance(transform.position, target.position) <= 2.1f)
+            if (Vector3.Distance(transform.position, target.position) <= 2.01f)
             {
                 // Debug.Log("Arrived at target");
                 //change animation to idle
