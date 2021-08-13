@@ -5,6 +5,7 @@ public class BasicAI : MonoBehaviour
     public Transform target;
     // private Animator animator;
     private Animation animation;
+    private int lock1 = 0;
     void Start()
     {
         StartCoroutine(MoveToTarget());
@@ -19,11 +20,17 @@ public class BasicAI : MonoBehaviour
         {
             //if distance less than 2m, stop moving
 
-            if (Vector3.Distance(transform.position, target.position) <= 2.01f)
+            if (Vector3.Distance(transform.position, target.position) <= 2.01f )
             {
                 // Debug.Log("Arrived at target");
                 //change animation to idle
                 animation.Play("Idle");
+                // Debug.Log("Idle");
+                if (lock1==0)
+                {
+                    StartCoroutine(gameObject.GetComponent<Customer>().StartCaptureAfterTime(0f, 4f));
+                    lock1++;
+                }
                 // animator.SetBool("Arrived", true);
                 // animator.SetBool("IsMoving", false);
             }
