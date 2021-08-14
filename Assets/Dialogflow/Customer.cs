@@ -8,7 +8,7 @@ public class Customer : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(StartCaptureAfterTime(0f, 4f));
+        // StartCoroutine(StartCaptureAfterTime(0f, 4f));
     }
 
     // Update is called once per frame

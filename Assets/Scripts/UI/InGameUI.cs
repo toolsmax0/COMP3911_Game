@@ -25,17 +25,6 @@ public class InGameUI : MonoBehaviour
                 OnResume();
             }
         }
-        else if (Input.GetKeyDown(KeyCode.F))
-        {
-            if (!paused)
-            {
-                ToTask();
-            }
-            else
-            {
-                OutTask();
-            }
-        }
     }
     public void ReturnMainMenu()
     {
@@ -71,25 +60,25 @@ public class InGameUI : MonoBehaviour
         }
     }
 
-    public void ToTask()
-    {
-        this.paused = true;
-        Time.timeScale = 0;
-        cashMenu.SetActive(true);
-        //disable first person look
-        camera.GetComponent<FirstPersonLook>().enabled = false;
-        Cursor.lockState = CursorLockMode.Confined;
-    }
+    // public void ToTask()
+    // {
+    //     this.paused = true;
+    //     Time.timeScale = 0;
+    //     cashMenu.SetActive(true);
+    //     //disable first person look
+    //     camera.GetComponent<FirstPersonLook>().enabled = false;
+    //     Cursor.lockState = CursorLockMode.Confined;
+    // }
 
-    public void OutTask()
-    {
-        Time.timeScale = 1f;
-        this.paused = false;
-        cashMenu.SetActive(false);
-        //enable first person look
-        camera.GetComponent<FirstPersonLook>().enabled = true;
-        Cursor.lockState = CursorLockMode.Locked;
-    }
+    // public void OutTask()
+    // {
+    //     Time.timeScale = 1f;
+    //     this.paused = false;
+    //     cashMenu.SetActive(false);
+    //     //enable first person look
+    //     camera.GetComponent<FirstPersonLook>().enabled = true;
+    //     Cursor.lockState = CursorLockMode.Locked;
+    // }
 
     public void OnPause()
     {
