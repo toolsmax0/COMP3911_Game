@@ -1,18 +1,21 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class Queuing
 {
     // Start is called before the first frame update
-
     public Transform baseTransform; // the first place
-    private Vector3 offset;// the distance between each queuing places
+
+    private Vector3 offset; // the distance between each queuing places
 
     private Transform rear;
+
     // private Queue<Transform> q;
     private Queue<GameObject> npcQueue;
 
     private static Queuing instance;
+
+    private static object dcl = new Object();
 
     Queuing()
     {
@@ -27,24 +30,26 @@ public class Queuing
     {
         if (instance == null)
         {
-            instance = new Queuing();
+            lock (dcl)
+            {
+                if (instance == null) instance = new Queuing();
+            }
         }
         return instance;
     }
 
-
-
-
     public Transform EnQueue(GameObject npc)
     {
         rear.position += offset;
-        npcQueue.Enqueue(npc);
+        npcQueue.Enqueue (npc);
         Debug.Log("EnQueue at rear = " + rear.position);
 
         //the destination of the incoming npc
         Transform dest = new GameObject().transform;
         dest.position = rear.position;
-        //random x-axis noise 
+
+        //random x-axis noise
+
         dest.position += new Vector3(Random.Range(-0.1f, 0.1f), 0, 0);
         return dest;
     }
@@ -63,6 +68,10 @@ public class Queuing
             //move forward
             npc.GetComponent<BasicAI>().target.position -= offset;
         }
+    }
+
+    public GameObject Peek(){
+        return npcQueue.Peek();
     }
 
     // Update should be called once an event has occur

@@ -43,7 +43,6 @@ public class SummonNPC : MonoBehaviour
                 npc.GetComponent<BasicAI>().target = des;
                 npc.GetComponent<Customer>().script =
                     GameObject.FindGameObjectWithTag("Script");
-                Dialogflow.customer = npc;
                 NumNPC++;
             }
             yield return new WaitForSeconds(summonDelay);

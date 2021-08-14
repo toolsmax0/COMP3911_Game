@@ -33,8 +33,6 @@ public class Customer : MonoBehaviour
         Debug.Log("Stop");
     }
 
-
-
     //Re: this logic should be moved into AI part
     public IEnumerator Leave(float time)
     {
@@ -42,6 +40,17 @@ public class Customer : MonoBehaviour
             GameObject.FindGameObjectWithTag("Finish").transform;
         Queuing.getInstance().DeQueue();
         yield return new WaitForSeconds(time);
-        Destroy(gameObject);
+        Destroy (gameObject);
+    }
+
+    void OnMouseDown()
+    {
+        StartCoroutine(Leave(3));
+        Debug.Log("Leave");
+    }
+
+    private void OnDestroy()
+    {
+        SummonNPC.NumNPC--;
     }
 }
