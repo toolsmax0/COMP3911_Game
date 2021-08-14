@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SummonNPC : MonoBehaviour
 {
-    public GameObject NPC;
+
+    public GameObject[] NPCList;
 
     public static int NumNPC = 0;
 
@@ -31,11 +32,9 @@ public class SummonNPC : MonoBehaviour
             float p = (float)NumNPC / MaxNPC;
             if (Random.Range(0f, 1f) > p)
             {
-                //find player, for test purpose
-                // Transform des =
-                //     GameObject.FindGameObjectWithTag("Wait").transform;
-
-                GameObject npc = Instantiate(NPC, transform);
+                //randomly select an NPC to spawn
+                int npcIndex = Random.Range(0, NPCList.Length);
+                GameObject npc = Instantiate(NPCList[npcIndex], transform);
 
                 //get the destination position of the queue
                 Transform des = Queuing.getInstance().EnQueue(npc);

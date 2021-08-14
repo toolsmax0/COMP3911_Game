@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Customer : MonoBehaviour
 {
+    [HideInInspector]
     public GameObject script;
 
     void Start()
@@ -40,7 +41,7 @@ public class Customer : MonoBehaviour
             GameObject.FindGameObjectWithTag("Finish").transform;
         Queuing.getInstance().DeQueue();
         yield return new WaitForSeconds(time);
-        Destroy (gameObject);
+        Destroy(gameObject);
     }
 
     void OnMouseDown()

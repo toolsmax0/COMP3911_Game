@@ -74,5 +74,5 @@ public class Queuing
         return npcQueue.Peek();
     }
 
-    // Update should be called once an event has occur
+
 }

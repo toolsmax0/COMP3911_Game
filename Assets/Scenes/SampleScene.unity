@@ -32402,7 +32402,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3876180d718578f48a6c2e4a6674dffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NPC: {fileID: 100002, guid: 639228533dcd31e498058a69dc001874, type: 3}
+  NPCList:
+  - {fileID: 100002, guid: 639228533dcd31e498058a69dc001874, type: 3}
+  - {fileID: 100022, guid: 53a11ea5b2afe8f489b5be2c41fe916d, type: 3}
+  - {fileID: 100040, guid: 723f263b68077a0458261c6ef8332c70, type: 3}
+  - {fileID: 100010, guid: 3f3cae724b315a541b9c35ad6f5e50ed, type: 3}
+  - {fileID: 100098, guid: 06faab228177e7742be9476c3daa0482, type: 3}
   summonDelay: 5
 --- !u!1001 &1409175459
 PrefabInstance:

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class BasicAI : MonoBehaviour
 {
+    [HideInInspector]
     public Transform target;
 
     // private Animator animator;
@@ -44,11 +45,11 @@ public class BasicAI : MonoBehaviour
 
                 // Debug.Log("Arrived at target");
                 //change animation to idle
-                animation.Play("Idle");
+
+                animation.Play("idle");
+
                 // Debug.Log("Idle");
 
-                // animator.SetBool("Arrived", true);
-                // animator.SetBool("IsMoving", false);
             }
             else
             {
