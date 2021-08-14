@@ -35,11 +35,7 @@ public class BasicAI : MonoBehaviour
                 //change animation to idle
                 animation.Play("Idle");
                 // Debug.Log("Idle");
-                if (lock1 == 0)
-                {
-                    StartCoroutine(gameObject.GetComponent<Customer>().StartCaptureAfterTime(0f, 4f));
-                    lock1++;
-                }
+
                 // animator.SetBool("Arrived", true);
                 // animator.SetBool("IsMoving", false);
             }
@@ -51,9 +47,16 @@ public class BasicAI : MonoBehaviour
                 // animator.SetBool("Arrived", false);
             }
         }
-        // face the player
         if (crtState == State.idle)
+        {
+            if (lock1 == 0)
+            {
+                StartCoroutine(gameObject.GetComponent<Customer>().StartCaptureAfterTime(0f, 4f));
+                lock1++;
+            }
+            // face the player
             transform.LookAt(player.transform);
+        }
     }
 
 
