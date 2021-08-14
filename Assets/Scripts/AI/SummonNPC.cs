@@ -8,11 +8,14 @@ public class SummonNPC : MonoBehaviour
 
     public static int NumNPC = 0;
 
-    public const int MaxNPC = 1;
+    public const int MaxNPC = 3;
+
+    public float summonDelay = 5f;
 
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("base transform set to" + Queuing.getInstance().baseTransform);
         StartCoroutine("Spawn");
     }
 
@@ -25,23 +28,25 @@ public class SummonNPC : MonoBehaviour
     {
         while (true)
         {
-            float p = (float) NumNPC / MaxNPC;
+            float p = (float)NumNPC / MaxNPC;
             if (Random.Range(0f, 1f) > p)
             {
                 //find player, for test purpose
-                Transform des =
-                    GameObject.FindGameObjectWithTag("Wait").transform;
+                // Transform des =
+                //     GameObject.FindGameObjectWithTag("Wait").transform;
 
                 GameObject npc = Instantiate(NPC, transform);
 
-                //set NPC destination
+                //get the destination position of the queue
+                Transform des = Queuing.getInstance().EnQueue(npc);
+
                 npc.GetComponent<BasicAI>().target = des;
                 npc.GetComponent<Customer>().script =
                     GameObject.FindGameObjectWithTag("Script");
                 Dialogflow.customer = npc;
                 NumNPC++;
             }
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(summonDelay);
         }
     }
 }
