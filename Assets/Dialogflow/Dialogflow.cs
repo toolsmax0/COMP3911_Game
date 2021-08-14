@@ -57,7 +57,7 @@ public class Dialogflow : MonoBehaviour
                 if (content.queryResult.intent.displayName == "q2+")
                 {
                     StartCoroutine(this.GetComponent<TextToSpeech>().Request(content.queryResult.fulfillmentText));
-                    StartCoroutine(customer.GetComponent<Customer>().StartCaptureAfterTime(4,4));
+                    StartCoroutine(customer.GetComponent<Customer>().StartCaptureAfterTime(5,4));
                 }
                 if (content.queryResult.intent.displayName == "credit")
                 {
