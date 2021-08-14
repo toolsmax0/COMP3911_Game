@@ -677,7 +677,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18152713}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.686, y: -0.735, z: -1.56}
+  m_LocalPosition: {x: -5.671, y: -1.14, z: -0.362}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1917241890}
@@ -32399,10 +32399,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1409045275}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65928fe093f8da245b1cf747e53db955, type: 3}
+  m_Script: {fileID: 11500000, guid: 3876180d718578f48a6c2e4a6674dffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   NPC: {fileID: 100002, guid: 639228533dcd31e498058a69dc001874, type: 3}
+  summonDelay: 5
 --- !u!1001 &1409175459
 PrefabInstance:
   m_ObjectHideFlags: 0
