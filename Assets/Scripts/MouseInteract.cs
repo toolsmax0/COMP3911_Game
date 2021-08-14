@@ -18,6 +18,9 @@ public class MouseInteract : MonoBehaviour
 
     void OnMouseDown() {
         Destroy(gameObject);
+    }
+
+    private void OnDestroy() {
         SummonNPC.NumNPC--;
     }
 }
