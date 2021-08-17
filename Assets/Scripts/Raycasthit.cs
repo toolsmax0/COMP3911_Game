@@ -45,7 +45,7 @@ public class Raycasthit : MonoBehaviour
                 {
                     opened = true;
                     door.OpenDoor();
-                    int randomvalue = Random.Range(0, 2);
+                    int randomvalue = Random.Range(0, 3);
                     switch (randomvalue)
                     {
 
