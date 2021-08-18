@@ -7,6 +7,9 @@ TagManager:
   - Door
   - Wait
   - Script
+  - SceneSetting_0
+  - SceneSetting_1
+  - SceneSetting_2
   layers:
   - Default
   - TransparentFX
