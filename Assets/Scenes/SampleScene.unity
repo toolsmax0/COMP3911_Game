@@ -26372,6 +26372,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: damaged_box 2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5cfeb4fbf71c69468879c119df4a7f3, type: 3}
+      propertyPath: m_TagString
+      value: SceneSetting_2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5cfeb4fbf71c69468879c119df4a7f3, type: 3}
 --- !u!4 &1119275523 stripped
@@ -39151,12 +39155,12 @@ Transform:
   - {fileID: 775064326}
   - {fileID: 703421998}
   - {fileID: 2064260156}
-  - {fileID: 1106679637}
-  - {fileID: 998772797}
   - {fileID: 616996825}
-  - {fileID: 1982654568}
+  - {fileID: 1106679637}
   - {fileID: 314441698}
+  - {fileID: 998772797}
   - {fileID: 823825851}
+  - {fileID: 1982654568}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
