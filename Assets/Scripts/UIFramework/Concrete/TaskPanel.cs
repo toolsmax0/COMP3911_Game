@@ -27,58 +27,72 @@ public class TaskPanel : BasePanel
             PanelManager.Push(new MainPanel());
         });
 
-        TMP_Text content = UITool.GetOrAddComponentInChildren<TMP_Text>("ContentText");
         UITool.GetOrAddComponentInChildren<Button>("Button0").onClick.AddListener(() =>
         {
-            content.text += "0";
+            addnumber("0");
         });
         UITool.GetOrAddComponentInChildren<Button>("Button1").onClick.AddListener(() =>
         {
-            content.text += "1";
+            addnumber("1");
         });
         UITool.GetOrAddComponentInChildren<Button>("Button2").onClick.AddListener(() =>
         {
-            content.text += "2";
+            addnumber("2");
         });
         UITool.GetOrAddComponentInChildren<Button>("Button3").onClick.AddListener(() =>
         {
-            content.text += "3";
+            addnumber("3");
         });
         UITool.GetOrAddComponentInChildren<Button>("Button4").onClick.AddListener(() =>
         {
-            content.text += "4";
+            addnumber("4");
         });
         UITool.GetOrAddComponentInChildren<Button>("Button5").onClick.AddListener(() =>
         {
-            content.text += "5";
+            addnumber("5");
         });
         UITool.GetOrAddComponentInChildren<Button>("Button6").onClick.AddListener(() =>
         {
-            content.text += "6";
+            addnumber("6");
         });
         UITool.GetOrAddComponentInChildren<Button>("Button7").onClick.AddListener(() =>
         {
-            content.text += "7";
+            addnumber("7");
         });
         UITool.GetOrAddComponentInChildren<Button>("Button8").onClick.AddListener(() =>
         {
-            content.text += "8";
+            addnumber("8");
         });
         UITool.GetOrAddComponentInChildren<Button>("Button9").onClick.AddListener(() =>
         {
-            content.text += "9";
+            addnumber("9");
         });
         UITool.GetOrAddComponentInChildren<Button>("Button.").onClick.AddListener(() =>
         {
-            content.text += ".";
+            addnumber(".");
         });
         UITool.GetOrAddComponentInChildren<Button>("ButtonX").onClick.AddListener(() =>
         {
-            content.text = "0";
+            addnumber("X");
         });
         UITool.GetOrAddComponentInChildren<Button>("ButtonConfirm").onClick.AddListener(() =>
         {
-            content.text = "0";
+            addnumber("X");
+            confirm();
         });
     }
+    private void addnumber(string btntype)
+    {
+        TMP_Text content = UITool.GetOrAddComponentInChildren<TMP_Text>("ContentText");
+        if (btntype.Equals("X"))
+            content.text = "0";
+        else if (btntype.Equals(".") && content.text.Contains("."))
+            return;
+        else if (content.text.Equals("0") && !btntype.Equals("."))
+            content.text = btntype;
+        else
+            content.text += btntype;
+    }
+
+    private void confirm() { }
 }
