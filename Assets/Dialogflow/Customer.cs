@@ -5,6 +5,7 @@ using UnityEngine;
 public class Customer : MonoBehaviour
 {
     [HideInInspector]
+    // [RequireComponent(typeof(Outline))]
     public GameObject script;
 
     void Start()
@@ -53,5 +54,17 @@ public class Customer : MonoBehaviour
     private void OnDestroy()
     {
         SummonNPC.NumNPC--;
+    }
+
+    void OnMouseOver()
+    {
+        //enable outline glow
+        GetComponent<Outline>().enabled = true;
+    }
+
+    void OnMouseExit()
+    {
+        //disable outline glow
+        GetComponent<Outline>().enabled = false;
     }
 }
