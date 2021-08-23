@@ -5,11 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class InGameUI : MonoBehaviour
 {
-    public GameObject ingameMenu;
-    public GameObject cashMenu;
+    public BasePanel ingameMenu;
+    public BasePanel cashMenu;
 
-    public GameObject camera;
-    private bool paused = false;
+    private static bool paused = false;
 
     // Update is called once per frame
     void Update()
@@ -82,21 +81,15 @@ public class InGameUI : MonoBehaviour
 
     public void OnPause()
     {
-        this.paused = true;
-        Time.timeScale = 0;
-        ingameMenu.SetActive(true);
-        //disable first person look
-        camera.GetComponent<FirstPersonLook>().enabled = false;
-        Cursor.lockState = CursorLockMode.Confined;
+        paused = true;
+        ingameMenu = new SettingPanel();
+        GameRoot.Instance.Push(ingameMenu);
     }
 
     public void OnResume()
     {
-        Time.timeScale = 1f;
-        this.paused = false;
-        ingameMenu.SetActive(false);
-        //enable first person look
-        camera.GetComponent<FirstPersonLook>().enabled = true;
-        Cursor.lockState = CursorLockMode.Locked;
+        paused = false;
+        ingameMenu.Pop();
     }
+    public static void resetPause() { paused = false; }
 }

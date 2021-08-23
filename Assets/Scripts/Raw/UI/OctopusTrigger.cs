@@ -9,12 +9,12 @@ this is the trigger for player entering the zone to manipulate the octopus.
 public class OctopusTrigger : MonoBehaviour
 {
     public GameObject textObj;
-    public GameObject cashMenu;
+    public BasePanel cashMenu;
     private AudioSource octopusAudio;
     private bool isActive = false;
 
 
-    private bool paused = false;
+    private static bool paused = false;
 
 
     void Awake()
@@ -65,23 +65,18 @@ public class OctopusTrigger : MonoBehaviour
     private void ToTask()
     {
         textObj.SetActive(false);
-        this.paused = true;
+        paused = true;
         Time.timeScale = 0;
-        cashMenu.SetActive(true);
-        //disable first person look
-        Camera.main.GetComponent<FirstPersonLook>().enabled = false;
-        Cursor.lockState = CursorLockMode.Confined;
+        cashMenu = new TaskPanel();
+        GameRoot.Instance.Push(cashMenu);
     }
 
     private void OutTask()
     {
         textObj.SetActive(true);
-
-        Time.timeScale = 1f;
-        this.paused = false;
-        cashMenu.SetActive(false);
-        //enable first person look
-        Camera.main.GetComponent<FirstPersonLook>().enabled = true;
-        Cursor.lockState = CursorLockMode.Locked;
+        paused = false;
+        cashMenu.Pop();
     }
+
+    public static void resetPause() { paused = false; }
 }

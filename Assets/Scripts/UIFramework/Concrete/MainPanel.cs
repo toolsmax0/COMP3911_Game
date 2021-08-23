@@ -14,6 +14,10 @@ public class MainPanel : BasePanel
 
     public override void OnEnter()
     {
+        //disable first person look
+        Time.timeScale = 1f;
+        Camera.main.GetComponent<FirstPersonLook>().enabled = true;
+        Cursor.lockState = CursorLockMode.Locked;
         // UITool.GetOrAddComponentInChildren<Button>("BtnQuit").onClick.AddListener(() =>
         // {
         //     GameRoot.Instance.SceneSystem.SetScene(new StartScene());
@@ -27,5 +31,13 @@ public class MainPanel : BasePanel
         // {
         //     Push(new SettingPanel());
         // });
+    }
+    public override void OnResume()
+    {
+        base.OnResume();
+        //disable first person look
+        Time.timeScale = 1f;
+        Camera.main.GetComponent<FirstPersonLook>().enabled = true;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }

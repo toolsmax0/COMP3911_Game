@@ -17,12 +17,14 @@ public class TaskPanel : BasePanel
     {
         UITool.GetOrAddComponentInChildren<Button>("BtnReturn").onClick.AddListener(() =>
         {
+            OctopusTrigger.resetPause();
             PanelManager.Pop();
         });
         UITool.GetOrAddComponentInChildren<Button>("BtnHome").onClick.AddListener(() =>
         {
+            OctopusTrigger.resetPause();
             PanelManager.PopAll();
-            PanelManager.Push(new StartPanel());
+            PanelManager.Push(new MainPanel());
         });
 
         TMP_Text content = UITool.GetOrAddComponentInChildren<TMP_Text>("ContentText");

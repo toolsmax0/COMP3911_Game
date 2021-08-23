@@ -13,6 +13,7 @@ public class SettingPanel : BasePanel
     {
         UITool.GetOrAddComponentInChildren<Button>("BtnBack").onClick.AddListener(() =>
         {
+            InGameUI.resetPause();
             PanelManager.Pop();
         });
     }

@@ -40,8 +40,7 @@ public class SummonNPC : MonoBehaviour
                 Transform des = Queuing.getInstance().EnQueue(npc);
 
                 npc.GetComponent<BasicAI>().target = des;
-                npc.GetComponent<Customer>().script =
-                    GameObject.FindGameObjectWithTag("Script");
+                npc.GetComponent<Customer>().script = GameObject.FindGameObjectWithTag("Script");
                 NumNPC++;
             }
             yield return new WaitForSeconds(summonDelay);

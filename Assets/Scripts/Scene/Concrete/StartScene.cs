@@ -16,6 +16,10 @@ public class StartScene : SceneState
 
     public override void OnEnter()
     {
+        Time.timeScale = 0;
+        Camera.main.GetComponent<FirstPersonLook>().enabled = false;
+        Cursor.lockState = CursorLockMode.Confined;
+
         panelManager = new PanelManager();
         if (SceneManager.GetActiveScene().name != sceneName)
         {
@@ -44,6 +48,6 @@ public class StartScene : SceneState
     {
         panelManager.Push(new StartPanel());
         GameRoot.Instance.SetAction(panelManager.Push);
-        Debug.Log($"{sceneName} The scene is loaded!");
+        Debug.Log($"The {sceneName} scene is loaded!");
     }
 }

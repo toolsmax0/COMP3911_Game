@@ -23,7 +23,8 @@ public class StartPanel : BasePanel
         UITool.GetOrAddComponentInChildren<Button>("BtnPlay").onClick.AddListener(() =>
         {
             // Click events can be written in here
-            GameRoot.Instance.SceneSystem.SetScene(new MainScene());
+            // GameRoot.Instance.SceneSystem.SetScene(new MainScene());
+            PanelManager.Pop();
         });
     }
 }
