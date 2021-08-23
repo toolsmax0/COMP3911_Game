@@ -23,6 +23,8 @@ public class Customer : MonoBehaviour
         yield return new WaitForSeconds(startTime);
 
         script.GetComponent<MicrophoneCapture>().StartCapture();
+        //set to active the head hearing icon
+        this.transform.Find("isHearing").gameObject.SetActive(true);
         Debug.Log("Start");
         StartCoroutine(StopCaptureAfterTime(Endtime));
     }
@@ -30,7 +32,7 @@ public class Customer : MonoBehaviour
     public IEnumerator StopCaptureAfterTime(float Endtime)
     {
         yield return new WaitForSeconds(Endtime);
-
+        this.transform.Find("isHearing").gameObject.SetActive(false);
         script.GetComponent<MicrophoneCapture>().StopCapture();
         Debug.Log("Stop");
     }

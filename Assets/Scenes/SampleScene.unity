@@ -32792,7 +32792,7 @@ MonoBehaviour:
   - {fileID: 100010, guid: 3f3cae724b315a541b9c35ad6f5e50ed, type: 3}
   - {fileID: 100098, guid: 06faab228177e7742be9476c3daa0482, type: 3}
   canJumpQueue: 1
-  summonDelay: 1
+  summonDelay: 2
 --- !u!1001 &1409175459
 PrefabInstance:
   m_ObjectHideFlags: 0
