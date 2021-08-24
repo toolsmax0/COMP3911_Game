@@ -24,6 +24,7 @@ public class MainScene : SceneState
         }
         else
         {
+            panelManager.Push(new MainPanel());
             panelManager.Push(new StartPanel());
             GameRoot.Instance.SetAction(panelManager.Push);
         }
@@ -44,6 +45,6 @@ public class MainScene : SceneState
     {
         panelManager.Push(new MainPanel());
         GameRoot.Instance.SetAction(panelManager.Push);
-        Debug.Log($"{sceneName} The scene is loaded!");
+        Debug.Log($"The {sceneName} scene is loaded!");
     }
 }

@@ -14,18 +14,30 @@ public class MainPanel : BasePanel
 
     public override void OnEnter()
     {
-        UITool.GetOrAddComponentInChildren<Button>("BtnQuit").onClick.AddListener(() =>
-        {
-            GameRoot.Instance.SceneSystem.SetScene(new StartScene());
-            Pop();
-        });
-        UITool.GetOrAddComponentInChildren<Button>("BtnMsg").onClick.AddListener(() =>
-        {
-            Push(new TaskPanel());
-        });
-        UITool.GetOrAddComponentInChildren<Button>("BtnSetting").onClick.AddListener(() =>
-        {
-            Push(new SettingPanel());
-        });
+        //disable first person look
+        Time.timeScale = 1f;
+        Camera.main.GetComponent<FirstPersonLook>().enabled = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        // UITool.GetOrAddComponentInChildren<Button>("BtnQuit").onClick.AddListener(() =>
+        // {
+        //     GameRoot.Instance.SceneSystem.SetScene(new StartScene());
+        //     Pop();
+        // });
+        // UITool.GetOrAddComponentInChildren<Button>("BtnMsg").onClick.AddListener(() =>
+        // {
+        //     Push(new TaskPanel());
+        // });
+        // UITool.GetOrAddComponentInChildren<Button>("BtnSetting").onClick.AddListener(() =>
+        // {
+        //     Push(new SettingPanel());
+        // });
+    }
+    public override void OnResume()
+    {
+        base.OnResume();
+        //disable first person look
+        Time.timeScale = 1f;
+        Camera.main.GetComponent<FirstPersonLook>().enabled = true;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
