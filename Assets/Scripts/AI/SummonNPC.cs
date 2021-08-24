@@ -7,7 +7,6 @@ public class SummonNPC : MonoBehaviour
 
     public GameObject[] NPCList;
 
-    public bool canJumpQueue = true; // set to true to enable jump queue event.
 
     public static int NumNPC = 0;
 
@@ -36,7 +35,7 @@ public class SummonNPC : MonoBehaviour
                 GameObject npc = Instantiate(NPCList[npcIndex], transform);
                 // temp hard code jump prob to 25%
                 Transform dest;
-                if (canJumpQueue && NumNPC > 1 && true)
+                if (Settings.getInstance().CanJumpQueue() && NumNPC > 1 && true)
                 {
                     Debug.Log("Attemp to jump the queue");
                     dest = Queuing.getInstance().jumpQueue();
