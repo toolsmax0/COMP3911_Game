@@ -1,3 +1,4 @@
+using System.Collections;
 public class Settings
 {
     //using singleton pattern
@@ -7,9 +8,9 @@ public class Settings
     {
         settings = new Hashtable();
         //default value
-        settings.Add("jumpqueue", true);
+        settings.Add("jumpqueue", false);
     }
-    public Settings getInstance()
+    public static Settings getInstance()
     {
         if (instance == null)
         {
