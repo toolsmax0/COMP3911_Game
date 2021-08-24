@@ -5,6 +5,7 @@ using UnityEngine;
 public class Customer : MonoBehaviour
 {
     [HideInInspector]
+    // [RequireComponent(typeof(Outline))]
     public GameObject script;
 
     void Start()
@@ -22,6 +23,8 @@ public class Customer : MonoBehaviour
         yield return new WaitForSeconds(startTime);
 
         script.GetComponent<MicrophoneCapture>().StartCapture();
+        //set to active the head hearing icon
+        this.transform.Find("isHearing").gameObject.SetActive(true);
         Debug.Log("Start");
         StartCoroutine(StopCaptureAfterTime(Endtime));
     }
@@ -29,7 +32,7 @@ public class Customer : MonoBehaviour
     public IEnumerator StopCaptureAfterTime(float Endtime)
     {
         yield return new WaitForSeconds(Endtime);
-
+        this.transform.Find("isHearing").gameObject.SetActive(false);
         script.GetComponent<MicrophoneCapture>().StopCapture();
         Debug.Log("Stop");
     }
@@ -53,5 +56,17 @@ public class Customer : MonoBehaviour
     private void OnDestroy()
     {
         SummonNPC.NumNPC--;
+    }
+
+    void OnMouseOver()
+    {
+        //enable outline glow
+        GetComponent<Outline>().enabled = true;
+    }
+
+    void OnMouseExit()
+    {
+        //disable outline glow
+        GetComponent<Outline>().enabled = false;
     }
 }

@@ -13,11 +13,15 @@ public class Raycasthit : MonoBehaviour
 
     GameObject[] scene_2;
 
+    GameObject plasticbag;
+
+    
     void Start()
     {
         scene_0 = GameObject.FindGameObjectsWithTag("SceneSetting_0");
         scene_1 = GameObject.FindGameObjectsWithTag("SceneSetting_1");
         scene_2 = GameObject.FindGameObjectsWithTag("SceneSetting_2");
+
         foreach (GameObject scene0 in scene_0)
         {
             scene0.SetActive(true);
@@ -39,6 +43,7 @@ public class Raycasthit : MonoBehaviour
             opened = true;
             gameObject.GetComponent<Dooranimated>().OpenDoor();
             int randomvalue = Random.Range(0, 3);
+            
             foreach (GameObject scene0 in scene_0)
             {
                 scene0.SetActive(randomvalue == 0);
