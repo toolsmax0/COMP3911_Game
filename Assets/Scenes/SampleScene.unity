@@ -32791,7 +32791,6 @@ MonoBehaviour:
   - {fileID: 100040, guid: 723f263b68077a0458261c6ef8332c70, type: 3}
   - {fileID: 100010, guid: 3f3cae724b315a541b9c35ad6f5e50ed, type: 3}
   - {fileID: 100098, guid: 06faab228177e7742be9476c3daa0482, type: 3}
-  canJumpQueue: 1
   summonDelay: 2
 --- !u!1001 &1409175459
 PrefabInstance:
@@ -46333,10 +46332,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Customer: ...'
+  m_text: "\u987E\u5BA2: ..."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9b6e519d56d31d948818188535732ade, type: 2}
+  m_sharedMaterial: {fileID: 113268300222790942, guid: 9b6e519d56d31d948818188535732ade, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
