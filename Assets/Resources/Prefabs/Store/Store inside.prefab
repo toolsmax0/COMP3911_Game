@@ -5609,7 +5609,7 @@ GameObject:
   - component: {fileID: 1592323028}
   - component: {fileID: 6087030898769472992}
   - component: {fileID: 6087030898769472993}
-  - component: {fileID: 6087030898769473006}
+  - component: {fileID: 7378204303533426014}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -5727,7 +5727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 600e87a72050f8d438d9e7a876164236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6087030898769473006
+--- !u!114 &7378204303533426014
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5736,7 +5736,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7941264313786162941}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07bf7f2a6ee02244b8db55f8299512fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 87606d92181b86841bb6d5dbc75cc9e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7941264313908540097

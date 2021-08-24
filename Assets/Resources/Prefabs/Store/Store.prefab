@@ -20963,8 +20963,8 @@ GameObject:
   - component: {fileID: 783363521430076320}
   - component: {fileID: 1871564881826893648}
   - component: {fileID: 8590956447156652850}
-  - component: {fileID: 8590956447156652848}
   - component: {fileID: 8590956447156652849}
+  - component: {fileID: 6738784329409992535}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -21070,18 +21070,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8590956447156652848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8564022516660297943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07bf7f2a6ee02244b8db55f8299512fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8590956447156652849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21092,6 +21080,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 600e87a72050f8d438d9e7a876164236, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6738784329409992535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8564022516660297943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87606d92181b86841bb6d5dbc75cc9e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8579988369627669403
