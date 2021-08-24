@@ -2797,7 +2797,8 @@ MonoBehaviour:
           m_YAdvance: 0
       m_FeatureLookupFlags: 0
   fallbackFontAssets: []
-  m_FallbackFontAssetTable: []
+  m_FallbackFontAssetTable:
+  - {fileID: 11400000, guid: 510515598e2ed3d4dbfa252e3bb20a82, type: 2}
   m_CreationSettings:
     sourceFontFileName: 
     sourceFontFileGUID: 863cae2485101404e8925882001636c4
@@ -2882,6 +2883,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _Ambient: 0.5
     - _Bevel: 0.5
