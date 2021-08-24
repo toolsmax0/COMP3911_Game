@@ -15,7 +15,7 @@ public class Dialogflow : MonoBehaviour
     public IEnumerator Request(byte[] speech)
     {
         //set the content of text mesh pro
-        subtitle.GetComponent<TMP_Text>().text = "Processing...";
+        subtitle.GetComponent<TMP_Text>().text = "處理中...";
 
         UnityWebRequest req = new UnityWebRequest("https://dialogflow.googleapis.com/v2/projects/" + this.GetComponent<GoogleOAuth>().projectID + "/agent/sessions/34563:detectIntent", "POST");
         RequestBody requestBody = new RequestBody
@@ -57,13 +57,13 @@ public class Dialogflow : MonoBehaviour
             {
                 if (content.queryResult.intent.displayName == "q1")
                 {
-                    subtitle.GetComponent<TMP_Text>().text = "顾客: " + content.queryResult.fulfillmentText;
+                    subtitle.GetComponent<TMP_Text>().text = "顧客: " + content.queryResult.fulfillmentText;
                     StartCoroutine(this.GetComponent<TextToSpeech>().Request(content.queryResult.fulfillmentText)); //Text-to-Speech Request
                     StartCoroutine(customer.GetComponent<Customer>().StartCaptureAfterTime(3, 4));
                 }
                 if (content.queryResult.intent.displayName == "q2+")
                 {
-                    subtitle.GetComponent<TMP_Text>().text = "顾客: " + content.queryResult.fulfillmentText;
+                    subtitle.GetComponent<TMP_Text>().text = "顧客: " + content.queryResult.fulfillmentText;
                     StartCoroutine(this.GetComponent<TextToSpeech>().Request(content.queryResult.fulfillmentText));
                     StartCoroutine(customer.GetComponent<Customer>().StartCaptureAfterTime(5, 4));
                 }
@@ -74,7 +74,7 @@ public class Dialogflow : MonoBehaviour
             }
             else
             {
-                subtitle.GetComponent<TMP_Text>().text = "Customer: " + "content.queryResult.fulfillmentText";
+                subtitle.GetComponent<TMP_Text>().text = "顧客: " + content.queryResult.fulfillmentText;
                 StartCoroutine(this.GetComponent<TextToSpeech>().Request("我没有听清楚你在说什么。"));
             }
         }
