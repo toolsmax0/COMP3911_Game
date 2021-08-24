@@ -574,11 +574,6 @@ PrefabInstance:
       propertyPath: textObj
       value: 
       objectReference: {fileID: 8257078024634515647}
-    - target: {fileID: 5742312588632063382, guid: 93f1e839b91a37044818786926e254c9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5742312589843108181, guid: 93f1e839b91a37044818786926e254c9,
         type: 3}
       propertyPath: m_RootOrder
