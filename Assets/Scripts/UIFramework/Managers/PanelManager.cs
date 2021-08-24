@@ -29,6 +29,11 @@ public class PanelManager
     /// <param name="nextPanel">The panel to display</param>
     public void Push(BasePanel nextPanel)
     {
+        //disable first person look
+        Time.timeScale = 0;
+        Camera.main.GetComponent<FirstPersonLook>().enabled = false;
+        Cursor.lockState = CursorLockMode.Confined;
+
         if (stackPanel.Count > 0)
         {
             panel = stackPanel.Peek();
@@ -62,5 +67,10 @@ public class PanelManager
         {
             stackPanel.Pop().OnExit();
         }
+    }
+
+    public UIType Peek()
+    {
+        return stackPanel.Peek().UIType;
     }
 }

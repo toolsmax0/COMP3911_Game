@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 /// <summary>
-/// Something that manages the whole picture
+/// Manage something global
 /// </summary>
 public class GameRoot : MonoBehaviour
 {
@@ -31,7 +31,7 @@ public class GameRoot : MonoBehaviour
 
     private void Start()
     {
-        SceneSystem.SetScene(new StartScene());
+        SceneSystem.SetScene(new MainScene());
     }
 
     /// <summary>
