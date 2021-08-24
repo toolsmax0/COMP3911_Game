@@ -44,11 +44,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NPCList:
-  - {fileID: 100002, guid: dc0ee9afdd0919e448e761c2604062c3, type: 3}
-  - {fileID: 100022, guid: 53a11ea5b2afe8f489b5be2c41fe916d, type: 3}
-  - {fileID: 100040, guid: 723f263b68077a0458261c6ef8332c70, type: 3}
-  - {fileID: 100010, guid: 3f3cae724b315a541b9c35ad6f5e50ed, type: 3}
-  - {fileID: 100098, guid: 06faab228177e7742be9476c3daa0482, type: 3}
+  - {fileID: 100002, guid: 4c5e7979cacc46048b1bd8d8298e142f, type: 3}
+  - {fileID: 100022, guid: 984c5a7281963e24c881ab3bb0486a94, type: 3}
+  - {fileID: 100040, guid: 3f36cec92bcde2e45aa242cdddf67646, type: 3}
+  - {fileID: 100010, guid: ce10341e09c13194ca9950dda122b2cc, type: 3}
+  - {fileID: 100098, guid: 69f54e8fb12ad0244b601f83cdd02afd, type: 3}
   summonDelay: 5
 --- !u!1 &7956462320184262004
 GameObject:

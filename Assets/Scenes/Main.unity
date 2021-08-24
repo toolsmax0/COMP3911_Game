@@ -131,31 +131,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7956462319639618679, guid: 5e9cf7ca7bae0dd48831b4266a5d37ac,
-        type: 3}
-      propertyPath: NPCList.Array.data[0]
-      value: 
-      objectReference: {fileID: 100002, guid: 4c5e7979cacc46048b1bd8d8298e142f, type: 3}
-    - target: {fileID: 7956462319639618679, guid: 5e9cf7ca7bae0dd48831b4266a5d37ac,
-        type: 3}
-      propertyPath: NPCList.Array.data[1]
-      value: 
-      objectReference: {fileID: 100022, guid: 984c5a7281963e24c881ab3bb0486a94, type: 3}
-    - target: {fileID: 7956462319639618679, guid: 5e9cf7ca7bae0dd48831b4266a5d37ac,
-        type: 3}
-      propertyPath: NPCList.Array.data[2]
-      value: 
-      objectReference: {fileID: 100040, guid: 3f36cec92bcde2e45aa242cdddf67646, type: 3}
-    - target: {fileID: 7956462319639618679, guid: 5e9cf7ca7bae0dd48831b4266a5d37ac,
-        type: 3}
-      propertyPath: NPCList.Array.data[3]
-      value: 
-      objectReference: {fileID: 100010, guid: ce10341e09c13194ca9950dda122b2cc, type: 3}
-    - target: {fileID: 7956462319639618679, guid: 5e9cf7ca7bae0dd48831b4266a5d37ac,
-        type: 3}
-      propertyPath: NPCList.Array.data[4]
-      value: 
-      objectReference: {fileID: 100098, guid: 69f54e8fb12ad0244b601f83cdd02afd, type: 3}
     - target: {fileID: 7956462320184261960, guid: 5e9cf7ca7bae0dd48831b4266a5d37ac,
         type: 3}
       propertyPath: m_RootOrder
@@ -216,11 +191,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC
       objectReference: {fileID: 0}
-    - target: {fileID: 7956462320184262004, guid: 5e9cf7ca7bae0dd48831b4266a5d37ac,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9cf7ca7bae0dd48831b4266a5d37ac, type: 3}
 --- !u!4 &431352132 stripped
@@ -240,11 +210,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Script
-      objectReference: {fileID: 0}
-    - target: {fileID: 4562481242523716520, guid: 4e43bae2cf5c6f24689d4fc4f7b4306a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4562481242523716525, guid: 4e43bae2cf5c6f24689d4fc4f7b4306a,
         type: 3}
