@@ -48,7 +48,8 @@ public class OctopusTrigger : MonoBehaviour
             //enable the UI
             isActive = true;
             textObj.SetActive(true);
-            octopusAudio.Play();
+            if (!octopusAudio.isPlaying && Time.timeScale != 0)
+                octopusAudio.Play();
         }
     }
 
