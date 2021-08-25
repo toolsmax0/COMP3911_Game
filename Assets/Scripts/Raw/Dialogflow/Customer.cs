@@ -27,7 +27,7 @@ public class Customer : MonoBehaviour
         //set to active the head hearing icon
         this.transform.Find("isHearing").gameObject.SetActive(true);
         //use this to show certain amount of money
-        script.GetComponent<ShowMoney>().ShowAmount(300);
+        script.GetComponent<ShowMoney>().ShowAmount(300, greedy: false);
         Debug.Log("Start");
         StartCoroutine(StopCaptureAfterTime(Endtime));
     }
