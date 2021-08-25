@@ -5,9 +5,11 @@ public class MicrophoneCapture : MonoBehaviour
     //Record to audio clip using microphone
     //Reference: https://docs.unity3d.com/ScriptReference/Microphone.html
     private byte[] speech;
+
     private bool recording;
+
     public AudioSource audioSource;
-    
+
     void Start()
     {
         if (Microphone.devices.Length <= 0)
@@ -17,7 +19,7 @@ public class MicrophoneCapture : MonoBehaviour
         else
         {
             // audioSource = this.GetComponent<AudioSource>();
-            Debug.Log(audioSource);
+            Debug.Log (audioSource);
         }
     }
 
@@ -41,6 +43,4 @@ public class MicrophoneCapture : MonoBehaviour
                 StartCoroutine(this.GetComponent<Dialogflow>().Request(speech)); //Dialogflow Request
         }
     }
-
-    
 }

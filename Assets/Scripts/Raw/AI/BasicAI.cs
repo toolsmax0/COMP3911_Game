@@ -61,15 +61,6 @@ public class BasicAI : MonoBehaviour
         }
         if (crtState == State.idle)
         {
-            if (lock1 == 0 && Queuing.getInstance().Peek() == gameObject)
-            {
-                Dialogflow.customer = gameObject;
-                StartCoroutine(gameObject
-                    .GetComponent<Customer>()
-                    .StartCaptureAfterTime(0f, 4f));
-                lock1++;
-            }
-
             // face the player
             transform.LookAt(player.transform);
         }

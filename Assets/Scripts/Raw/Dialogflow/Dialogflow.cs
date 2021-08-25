@@ -17,7 +17,14 @@ public class Dialogflow : MonoBehaviour
     public static GameObject customer{
         get => _customer;
         set{
+            if(_customer != null )
+            {
+                _customer.GetComponent<Customer>().enabled = false;
+                _customer?.transform.Find("isHearing").gameObject.SetActive(false);
+            }
             _customer=value;
+            _customer.GetComponent<Customer>().enabled = true;
+            _customer.transform.Find("isHearing").gameObject.SetActive(true);
             state=State.q1;
             money=0;
             DialogflowWebRequest.Refresh();
@@ -52,10 +59,13 @@ public class Dialogflow : MonoBehaviour
                     },
                 inputAudio = System.Convert.ToBase64String(speech)
             };
-        if(state==State.q2p){
+        if(state==State.q2p||state==State.exit){
             var prm = new QueryParameters();
             prm.contexts = new Context[1];
-            prm.contexts[0]=new Context("payment",3);
+            if(state==State.q2p)
+                prm.contexts[0]=new Context("payment",3);
+            else
+                prm.contexts[0]=new Context("exit",3);
             requestBody.queryParams=prm;
         }
 
@@ -95,14 +105,16 @@ public class Dialogflow : MonoBehaviour
                     .GetComponent<TextToSpeech>()
                     .Request(content.queryResult.fulfillmentText));
             }
+            else
+            {
+                subtitle.GetComponent<TMP_Text>().text = "";
+            }
+            Debug.Log(state.ToString());
             string text = content.queryResult.fulfillmentText;
             Match m;
             switch (content.queryResult.intent.displayName)
             {
                 case "q1":
-                    StartCoroutine(customer
-                        .GetComponent<Customer>()
-                        .StartCaptureAfterTime(3, 4));
                     if (UnityEngine.Random.Range(0f, 1f) > 0.5)
                         state = State.q2p;
                     else 
@@ -110,23 +122,29 @@ public class Dialogflow : MonoBehaviour
                     break;
      
                 case "q2":
-                    StartCoroutine(customer
-                        .GetComponent<Customer>()
-                        .StartCaptureAfterTime(3, 4));
                     m=regex.Match(text);
                     money=Int32.Parse(m.Groups[1].ToString());
+                    state=State.paying;
+                    TaskPanel.target=money;
                     // Debug.Log(money);
+                    Pay();
                     break;
                 case "q2+":
-                    StartCoroutine(customer
-                        .GetComponent<Customer>()
-                        .StartCaptureAfterTime(5, 4));
                     state=State.credit;
                     m=regex.Match(text);
                     money=Int32.Parse(m.Groups[1].ToString());
+                    TaskPanel.target=money;
                     Debug.Log(money);
                     break;
                 case "credit":
+                    // StartCoroutine(customer.GetComponent<Customer>().Leave(3));
+                    state=State.paying;
+                    Pay();
+                    break;
+                case "paying":
+                    Pay();
+                    break;
+                case "exit":
                     StartCoroutine(customer.GetComponent<Customer>().Leave(3));
                     break;
                 default:
@@ -141,6 +159,17 @@ public class Dialogflow : MonoBehaviour
         req.Dispose();
     }
 
+    public void Pay()
+    {
+        var sm = gameObject.GetComponent<ShowMoney>();
+        sm.ClearTable();
+        int n = money/50;
+        int t = UnityEngine.Random.Range(1,n+1)*50;
+        sm.ShowAmount(t);
+        money-=t;
+        Debug.Log(t+" paid, "+money+" left.");
+    }
+
     public void Start()
     {
         DialogflowWebRequest.endpoint = "https://dialogflow.googleapis.com/v2/";
@@ -148,7 +177,7 @@ public class Dialogflow : MonoBehaviour
             this.GetComponent<GoogleOAuth>().projectID;
         DialogflowWebRequest.Refresh();
     }
-    public enum State{q1,q2,q2p,credit};
+    public enum State{q1,q2,q2p,credit,paying,exit};
 
     public static class DialogflowWebRequest
     {
