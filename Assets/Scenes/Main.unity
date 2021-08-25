@@ -1368,6 +1368,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1903085588}
     m_Modifications:
+    - target: {fileID: 2084758324, guid: dc981c4b89919b14ab302d85068c1d02, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 510515598e2ed3d4dbfa252e3bb20a82,
+        type: 2}
+    - target: {fileID: 2084758324, guid: dc981c4b89919b14ab302d85068c1d02, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 236693055856733150, guid: 510515598e2ed3d4dbfa252e3bb20a82,
+        type: 2}
     - target: {fileID: 8257078025053417524, guid: dc981c4b89919b14ab302d85068c1d02,
         type: 3}
       propertyPath: m_Name
@@ -1477,6 +1487,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8257078025990179007, guid: dc981c4b89919b14ab302d85068c1d02,
+        type: 3}
+      propertyPath: m_text
+      value: "\u8ACB\u6309F\u9375\u4F7F\u7528\u6536\u97F3\u6A5F"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8257078025990179007, guid: dc981c4b89919b14ab302d85068c1d02,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 72
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc981c4b89919b14ab302d85068c1d02, type: 3}
