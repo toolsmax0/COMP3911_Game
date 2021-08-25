@@ -20,20 +20,27 @@ public class Customer : MonoBehaviour
 
     public IEnumerator StartCaptureAfterTime(float startTime, float Endtime)
     {
+
         yield return new WaitForSeconds(startTime);
 
         script.GetComponent<MicrophoneCapture>().StartCapture();
         //set to active the head hearing icon
         this.transform.Find("isHearing").gameObject.SetActive(true);
+        //use this to show certain amount of money
+        script.GetComponent<ShowMoney>().ShowAmount(300);
         Debug.Log("Start");
         StartCoroutine(StopCaptureAfterTime(Endtime));
     }
 
     public IEnumerator StopCaptureAfterTime(float Endtime)
     {
+
         yield return new WaitForSeconds(Endtime);
         this.transform.Find("isHearing").gameObject.SetActive(false);
         script.GetComponent<MicrophoneCapture>().StopCapture();
+        //use this call to empty the money
+        script.GetComponent<ShowMoney>().ClearTable();
+
         Debug.Log("Stop");
     }
 
