@@ -68,7 +68,7 @@ class ShowMoney : MonoBehaviour
             for (int j = 0; j < money[i]; j++)
             {
                 next_pos.position += offset.position;
-                Debug.Log("ShowMoney: " + next_pos.position);
+                // Debug.Log("ShowMoney: " + next_pos.position);
                 GameObject new_money = Instantiate(money_object, next_pos.position, Quaternion.identity);
                 new_money.transform.parent = base_position;
                 showed_money.Add(new_money);
@@ -89,6 +89,7 @@ class ShowMoney : MonoBehaviour
         {
             Destroy(go);
         }
+        showed_money.Clear();
         crt_amount = 0;
         next_pos.position = base_position.transform.position;
 
