@@ -10,6 +10,8 @@ public class Customer : MonoBehaviour
 
     void Start()
     {
+
+        script.GetComponent<ShowMoney>().ShowAmount(300, greedy: false);
         // StartCoroutine(StartCaptureAfterTime(0f, 4f));
     }
 
@@ -47,7 +49,7 @@ public class Customer : MonoBehaviour
             GameObject.FindGameObjectWithTag("Finish").transform;
         Queuing.getInstance().DeQueue();
         yield return new WaitForSeconds(time);
-        Destroy (gameObject);
+        Destroy(gameObject);
     }
 
     void OnMouseDown()
