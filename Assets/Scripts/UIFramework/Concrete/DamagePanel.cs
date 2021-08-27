@@ -14,24 +14,10 @@ public class DamagePanel : BasePanel
 
     public override void OnEnter()
     {
-        //disable first person look
-
-        // Time.timeScale = 1f;
-        // Camera.main.GetComponent<FirstPersonLook>().enabled = true;
-        // Cursor.lockState = CursorLockMode.Locked;
-
-        // UITool.GetOrAddComponentInChildren<Button>("BtnBack").onClick.AddListener(() =>
-        // {
-        //     GameRoot.Instance.SceneSystem.SetScene(new StartScene());
-        //     Pop();
-        // });
+        UITool.GetOrAddComponentInChildren<Button>("BtnBack").onClick.AddListener(() =>
+        {
+            CountDamage.resetPanel();
+            PanelManager.Pop();
+        });
     }
-    // public override void OnResume()
-    // {
-    //     base.OnResume();
-    //     //disable first person look
-    //     Time.timeScale = 1f;
-    //     Camera.main.GetComponent<FirstPersonLook>().enabled = true;
-    //     Cursor.lockState = CursorLockMode.Locked;
-    // }
 }
