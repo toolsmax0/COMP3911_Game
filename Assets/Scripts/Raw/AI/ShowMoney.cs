@@ -69,7 +69,9 @@ class ShowMoney : MonoBehaviour
             {
                 next_pos.position += offset.position;
                 // Debug.Log("ShowMoney: " + next_pos.position);
-                GameObject new_money = Instantiate(money_object, next_pos.position, Quaternion.identity);
+                //rotate 90 along x-axis
+
+                GameObject new_money = Instantiate(money_object, next_pos.position, money_object.transform.rotation);
                 new_money.transform.parent = base_position;
                 showed_money.Add(new_money);
             }

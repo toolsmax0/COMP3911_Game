@@ -41,6 +41,7 @@ public class BasicAI : MonoBehaviour
                 stopDist + 0.01f
             )
             {
+                
                 crtState = State.idle;
 
                 // Debug.Log("Arrived at target");
