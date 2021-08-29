@@ -1,9 +1,18 @@
 using System.Collections;
-public static class Settings
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Settings : MonoBehaviour
 {
-    public static bool jumpQueueSwitch = false; // 顾客是否插队
+
+    public Slider jumpQueueSlider;
+    public static double jumpQueueProb = 0.5; // 顾客是否插队
+
+    
 
     public static int maxNumOfCustomers = 3; // 同时出现顾客的最大数量
+
+    public Slider paymentSlider;
 
     public static double paymentProb = 0.5; // 顾客询问支付手段的概率
 

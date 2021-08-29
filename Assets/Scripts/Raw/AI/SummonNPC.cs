@@ -34,7 +34,7 @@ public class SummonNPC : MonoBehaviour
                 GameObject npc = Instantiate(NPCList[npcIndex], transform);
                 // temp hard code jump prob to 25%
                 Transform dest;
-                if (Settings.jumpQueueSwitch && NumNPC > 1 && true)
+                if (UnityEngine.Random.Range(0f,1f)<Settings.jumpQueueProb && NumNPC > 1 && true)
                 {
                     Debug.Log("Attemp to jump the queue");
                     dest = Queuing.getInstance().jumpQueue();
