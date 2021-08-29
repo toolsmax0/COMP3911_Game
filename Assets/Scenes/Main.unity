@@ -483,13 +483,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f9cfbda9dd28a48ba79f79dd186d20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money_100: {fileID: 7228261846225655301, guid: 80171ac8e8c6f714a80812aef0936a2e,
+  money_100: {fileID: 5827650472768890694, guid: ca313c4807bdd4e46af2fed82b9636e3,
     type: 3}
-  money_50: {fileID: 7228261846225655301, guid: 80171ac8e8c6f714a80812aef0936a2e,
+  money_50: {fileID: 4814661638557114904, guid: 18a95a75cd01ad8498d82815978d4843,
     type: 3}
-  money_20: {fileID: 7228261846225655301, guid: 80171ac8e8c6f714a80812aef0936a2e,
+  money_20: {fileID: 2513013028911246916, guid: 718ce406c50e3cd419b822348e348b03,
     type: 3}
-  money_10: {fileID: 7228261846225655301, guid: 80171ac8e8c6f714a80812aef0936a2e,
+  money_10: {fileID: 6735622219670089832, guid: 45606f90ebb144b45a1c2d21b49e7758,
     type: 3}
   base_position: {fileID: 1624926568}
 --- !u!1 &865911495
@@ -1273,6 +1273,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1624926568, guid: 33504352f5741b84d881f9a007f9e9c1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.007
+      objectReference: {fileID: 0}
     - target: {fileID: 2021494413, guid: 33504352f5741b84d881f9a007f9e9c1, type: 3}
       propertyPath: textObj
       value: 
