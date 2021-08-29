@@ -72,6 +72,7 @@ class ShowMoney : MonoBehaviour
                 //rotate 90 along x-axis
 
                 GameObject new_money = Instantiate(money_object, next_pos.position, money_object.transform.rotation);
+                //randomize rotation
                 new_money.transform.parent = base_position;
                 showed_money.Add(new_money);
             }
@@ -101,7 +102,7 @@ class ShowMoney : MonoBehaviour
     {
         int remain = amount;
         if (greedy)
-            return new int[] { remain / 100, remain % 100 / 50, remain % 50 / 20, remain % 20 / 10 };
+            return new int[] { remain % 20 / 10, remain % 50 / 20, remain % 100 / 50, remain / 100 };
 
         //else randomized
         int[] money_amounts = new int[4] { 0, 0, 0, 0 };
@@ -112,7 +113,7 @@ class ShowMoney : MonoBehaviour
             if (remain >= 100)
             {
                 //50 % prob
-                if (Random.Range(0, 1) == 0)
+                if (Random.Range(0, 2) == 0)
                 {
                     money_amounts[3]++;
                     remain -= 100;
@@ -120,7 +121,7 @@ class ShowMoney : MonoBehaviour
             }
             if (remain >= 50)
             {
-                if (Random.Range(0, 1) == 0)
+                if (Random.Range(0, 2) == 0)
                 {
                     money_amounts[2]++;
                     remain -= 50;
@@ -128,7 +129,7 @@ class ShowMoney : MonoBehaviour
             }
             if (remain >= 20)
             {
-                if (Random.Range(0, 1) == 0)
+                if (Random.Range(0, 2) == 0)
                 {
                     money_amounts[1]++;
                     remain -= 20;
@@ -141,5 +142,19 @@ class ShowMoney : MonoBehaviour
             }
         }
         return money_amounts;
+    }
+
+    public void Main()
+    {
+        for (int i = 0; i < 1000; i++)
+        {
+            int n = Random.Range(0, 100);
+            n *= 10;
+            int[] res = Decompose(n, false);
+            if (res[0] * 10 + res[1] * 20 + res[2] * 50 + res[3] * 100 != n)
+            {
+                Debug.Log("Error: " + n + " = " + res[0] + " * 10 + " + res[1] + " * 20 + " + res[2] + " * 50 + " + res[3] + " * 100");
+            }
+        }
     }
 }
