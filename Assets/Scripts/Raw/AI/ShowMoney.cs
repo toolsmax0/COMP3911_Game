@@ -112,8 +112,8 @@ class ShowMoney : MonoBehaviour
         {
             if (remain >= 100)
             {
-                //50 % prob
-                if (Random.Range(0, 2) == 0)
+                //33 % prob
+                if (Random.Range(0, 3) == 0)
                 {
                     money_amounts[3]++;
                     remain -= 100;
@@ -121,7 +121,7 @@ class ShowMoney : MonoBehaviour
             }
             if (remain >= 50)
             {
-                if (Random.Range(0, 2) == 0)
+                if (Random.Range(0, 3) == 0)
                 {
                     money_amounts[2]++;
                     remain -= 50;
@@ -143,6 +143,8 @@ class ShowMoney : MonoBehaviour
         }
         return money_amounts;
     }
+
+
 
     public void Main()
     {
