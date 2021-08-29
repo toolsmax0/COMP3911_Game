@@ -1,31 +1,10 @@
 using System.Collections;
-public class Settings
+public static class Settings
 {
-    //using singleton pattern
-    private static Settings instance;
-    private Hashtable settings;
-    Settings()
-    {
-        settings = new Hashtable();
-        //default value
-        settings.Add("jumpqueue", false);
-    }
-    public static Settings getInstance()
-    {
-        if (instance == null)
-        {
-            instance = new Settings();
-        }
-        return instance;
-    }
+    public static bool jumpQueueSwitch = false; // 顾客是否插队
 
-    public void ToggleJumpQueue()
-    {
-        settings["jumpqueue"] = !(bool)settings["jumpqueue"];
-    }
+    public static int maxNumOfCustomers = 3; // 同时出现顾客的最大数量
 
-    public bool CanJumpQueue()
-    {
-        return (bool)settings["jumpqueue"];
-    }
+    public static double paymentProb = 0.5; // 顾客询问支付手段的概率
+
 }

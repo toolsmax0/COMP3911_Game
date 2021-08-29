@@ -10,7 +10,6 @@ public class SummonNPC : MonoBehaviour
 
     public static int NumNPC = 0;
 
-    public const int MaxNPC = 3;
 
     public float summonDelay = 5f;
 
@@ -27,7 +26,7 @@ public class SummonNPC : MonoBehaviour
     {
         while (true)
         {
-            float p = (float)NumNPC / MaxNPC;
+            float p = (float)NumNPC / Settings.maxNumOfCustomers;
             if (Random.Range(0f, 1f) > p)
             {
                 //randomly select an NPC to spawn
@@ -35,7 +34,7 @@ public class SummonNPC : MonoBehaviour
                 GameObject npc = Instantiate(NPCList[npcIndex], transform);
                 // temp hard code jump prob to 25%
                 Transform dest;
-                if (Settings.getInstance().CanJumpQueue() && NumNPC > 1 && true)
+                if (Settings.jumpQueueSwitch && NumNPC > 1 && true)
                 {
                     Debug.Log("Attemp to jump the queue");
                     dest = Queuing.getInstance().jumpQueue();

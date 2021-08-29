@@ -115,7 +115,7 @@ public class Dialogflow : MonoBehaviour
             switch (content.queryResult.intent.displayName)
             {
                 case "q1":
-                    if (UnityEngine.Random.Range(0f, 1f) > 0.5)
+                    if (UnityEngine.Random.Range(0f, 1f) < Settings.paymentProb)
                         state = State.q2p;
                     else 
                         state = State.q2;
