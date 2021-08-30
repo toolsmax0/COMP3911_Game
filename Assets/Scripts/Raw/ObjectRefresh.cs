@@ -15,7 +15,6 @@ public class ObjectRefresh : MonoBehaviour
 
     GameObject plasticbag;
 
-    
     void Start()
     {
         scene_0 = GameObject.FindGameObjectsWithTag("SceneSetting_0");
@@ -43,7 +42,7 @@ public class ObjectRefresh : MonoBehaviour
             opened = true;
             gameObject.GetComponent<Dooranimated>().OpenDoor();
             int randomvalue = Random.Range(0, 3);
-            
+
             foreach (GameObject scene0 in scene_0)
             {
                 scene0.SetActive(randomvalue == 0);
@@ -62,5 +61,39 @@ public class ObjectRefresh : MonoBehaviour
             opened = false;
             gameObject.GetComponent<Dooranimated>().CloseDoor();
         }
+    }
+
+    static public int GetNumOfBags() // Get the number of plastic bags on the table
+    {
+        return 0;
+    }
+
+    static public int GetNumOfBrokenBottles()
+    {
+        return 0;
+    }
+
+    static public int GetNumOfBrokenCreams()
+    {
+        return 0;
+    }
+
+    static public int GetNumOfBrokenPaperBags()
+    {
+        return 0;
+    }
+
+    static public int GetNumOfBrokenBuckets()
+    {
+        return 0;
+    }
+
+    static public int GetNumOfBrokenBoxes()
+    {
+        return 0;
+    }
+    static public int GetNumOfBrokenPaperRolls()
+    {
+        return 0;
     }
 }

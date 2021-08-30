@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class DamagePanel : BasePanel
 {
     static readonly string path = "Prefabs/UI/Panel/DamagePanel";
+    public GameObject script;
 
     public DamagePanel() : base(new UIType(path)) { }
 
