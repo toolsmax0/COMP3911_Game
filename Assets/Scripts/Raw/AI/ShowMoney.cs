@@ -106,10 +106,10 @@ class ShowMoney : MonoBehaviour
         int[] money_amounts = new int[4] { 0, 0, 0, 0 };
         if (greedy)
         {
-            money_amounts[3] = remain /= 100;
-            money_amounts[2] = remain /= 50;
-            money_amounts[1] = remain /= 20;
-            money_amounts[0] = remain /= 10;
+            money_amounts[3] = remain >= 100 ? remain /= 100 : 0;
+            money_amounts[2] = remain >= 50 ? remain /= 50 : 0;
+            money_amounts[1] = remain >= 20 ? remain /= 20 : 0;
+            money_amounts[0] = remain >= 10 ? remain /= 10 : 0;
         }
 
         //decompose the amount into 10, 20, 50, 100
