@@ -53,7 +53,13 @@ public class DamagePanel : BasePanel
                         <Image>("InputField1")
                         .color = UnityEngine.Color.green;
                     cb = UnityEngine.Color.green;
-
+                }
+                else
+                {
+                    UITool
+                    .GetOrAddComponentInChildren
+                    <Image>("InputField1")
+                    .color = UnityEngine.Color.red;
                 }
             });
 
@@ -71,8 +77,15 @@ public class DamagePanel : BasePanel
                         <Image>("InputField2")
                         .color = UnityEngine.Color.green;
                     cb = UnityEngine.Color.green;
-
                 }
+                else
+                {
+                    UITool
+                    .GetOrAddComponentInChildren
+                    <Image>("InputField2")
+                    .color = UnityEngine.Color.red;
+                }
+
             });
 
         UITool
@@ -91,6 +104,13 @@ public class DamagePanel : BasePanel
                     cb = UnityEngine.Color.green;
 
                 }
+                else
+                {
+                    UITool
+                    .GetOrAddComponentInChildren
+                    <Image>("InputField3")
+                    .color = UnityEngine.Color.red;
+                }
             });
         UITool
             .GetOrAddComponentInChildren<TMP_InputField>("InputField4")
@@ -107,6 +127,13 @@ public class DamagePanel : BasePanel
                         .color = UnityEngine.Color.green;
                     cb = UnityEngine.Color.green;
 
+                }
+                else
+                {
+                    UITool
+                    .GetOrAddComponentInChildren
+                    <Image>("InputField4")
+                    .color = UnityEngine.Color.red;
                 }
             });
         UITool
@@ -125,6 +152,13 @@ public class DamagePanel : BasePanel
                     cb = UnityEngine.Color.green;
 
                 }
+                else
+                {
+                    UITool
+                    .GetOrAddComponentInChildren
+                    <Image>("InputField5")
+                    .color = UnityEngine.Color.red;
+                }
             });
         UITool
             .GetOrAddComponentInChildren<TMP_InputField>("InputField6")
@@ -140,7 +174,13 @@ public class DamagePanel : BasePanel
                         <Image>("InputField6")
                         .color = UnityEngine.Color.green;
                     cb = UnityEngine.Color.green;
-
+                }
+                else
+                {
+                    UITool
+                    .GetOrAddComponentInChildren
+                    <Image>("InputField6")
+                    .color = UnityEngine.Color.red;
                 }
             });
     }

@@ -866,6 +866,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.048646327, y: 0.00045544095, z: 0.023583082}
   m_Center: {x: -0.0028456224, y: -0.0067918417, z: 0.0012957737}
+--- !u!1 &1443563182 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8257078025053417524, guid: dc981c4b89919b14ab302d85068c1d02,
+    type: 3}
+  m_PrefabInstance: {fileID: 5793404301026147581}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1457057423 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1825559302684949700, guid: 33504352f5741b84d881f9a007f9e9c1,
@@ -1332,6 +1338,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1903085588}
     m_Modifications:
     - target: {fileID: 2084758324, guid: dc981c4b89919b14ab302d85068c1d02, type: 3}
+      propertyPath: m_text
+      value: "\u9867\u5BA2: ..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2084758324, guid: dc981c4b89919b14ab302d85068c1d02, type: 3}
       propertyPath: m_colorMode
       value: 0
       objectReference: {fileID: 0}
@@ -1602,7 +1612,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7378204303533426014, guid: fa4f1e9295f20d84da5fbaf5ad8e7ce9, type: 3}
+    - {fileID: 6087030898769472993, guid: fa4f1e9295f20d84da5fbaf5ad8e7ce9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fa4f1e9295f20d84da5fbaf5ad8e7ce9, type: 3}
 --- !u!1001 &6447407560270125124
 PrefabInstance:
@@ -1697,6 +1709,10 @@ PrefabInstance:
       propertyPath: textObj
       value: 
       objectReference: {fileID: 8257078024634515647}
+    - target: {fileID: 2021494413, guid: 33504352f5741b84d881f9a007f9e9c1, type: 3}
+      propertyPath: interactionPanel
+      value: 
+      objectReference: {fileID: 1443563182}
     - target: {fileID: 1529055129426099426, guid: 33504352f5741b84d881f9a007f9e9c1,
         type: 3}
       propertyPath: m_Name
