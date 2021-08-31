@@ -1,31 +1,19 @@
 using System.Collections;
-public class Settings
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Settings : MonoBehaviour
 {
-    //using singleton pattern
-    private static Settings instance;
-    private Hashtable settings;
-    Settings()
-    {
-        settings = new Hashtable();
-        //default value
-        settings.Add("jumpqueue", false);
-    }
-    public static Settings getInstance()
-    {
-        if (instance == null)
-        {
-            instance = new Settings();
-        }
-        return instance;
-    }
 
-    public void ToggleJumpQueue()
-    {
-        settings["jumpqueue"] = !(bool)settings["jumpqueue"];
-    }
+    public Slider jumpQueueSlider;
+    public static double jumpQueueProb = 0.5; // 顾客是否插队
 
-    public bool CanJumpQueue()
-    {
-        return (bool)settings["jumpqueue"];
-    }
+    
+
+    public static int maxNumOfCustomers = 3; // 同时出现顾客的最大数量
+
+    public Slider paymentSlider;
+
+    public static double paymentProb = 0.5; // 顾客询问支付手段的概率
+
 }
