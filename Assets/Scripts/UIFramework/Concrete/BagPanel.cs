@@ -37,7 +37,7 @@ public class BagPanel : BasePanel
 
             //todo: please provide interface to get the number of bag in scene
             // int presented = ObjectRefresh.GetNumOfBrokenBottles();
-            int presented = 2;
+            int presented = ObjectRefresh.GetNumOfBags();
             Debug.Log("n==" + inputed + " m==" + presented);
             if (inputed == presented)
             {
@@ -53,7 +53,6 @@ public class BagPanel : BasePanel
                 <Image>("InputField1")
                 .color = UnityEngine.Color.red;
             }
-
         });
     }
 }

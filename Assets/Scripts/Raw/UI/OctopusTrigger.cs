@@ -8,7 +8,7 @@ this is the trigger for player entering the zone to manipulate the octopus.
 */
 public class OctopusTrigger : MonoBehaviour
 {
-    public GameObject textObj;
+    public GameObject interactionPanel;
     public BasePanel cashMenu;
     private AudioSource octopusAudio;
     private bool isActive = false;
@@ -19,7 +19,7 @@ public class OctopusTrigger : MonoBehaviour
 
     void Awake()
     {
-        textObj.SetActive(false);
+        interactionPanel.SetActive(false);
         //get the audio component
         octopusAudio = GetComponent<AudioSource>();
 
@@ -47,7 +47,7 @@ public class OctopusTrigger : MonoBehaviour
         {
             //enable the UI
             isActive = true;
-            textObj.SetActive(true);
+            interactionPanel.SetActive(true);
             if (!octopusAudio.isPlaying && Time.timeScale != 0)
                 octopusAudio.Play();
         }
@@ -59,13 +59,13 @@ public class OctopusTrigger : MonoBehaviour
         {
             //disable the UI
             isActive = false;
-            textObj.SetActive(false);
+            interactionPanel.SetActive(false);
         }
     }
 
     private void ToTask()
     {
-        textObj.SetActive(false);
+        interactionPanel.SetActive(false);
         paused = true;
         Time.timeScale = 0;
         cashMenu = new TaskPanel();
@@ -74,7 +74,7 @@ public class OctopusTrigger : MonoBehaviour
 
     private void OutTask()
     {
-        textObj.SetActive(true);
+        interactionPanel.SetActive(true);
         paused = false;
         cashMenu.Pop();
     }

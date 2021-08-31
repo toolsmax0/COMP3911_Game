@@ -10,23 +10,25 @@ public class Dialogflow : MonoBehaviour
 {
     private static GameObject _customer = null;
     public static State state;
-    public Regex regex = new Regex(@"^我要充值(\d+)元",RegexOptions.Compiled);
-    
+    public Regex regex = new Regex(@"^我要充值(\d+)元", RegexOptions.Compiled);
+
 
     public static int money;
-    public static GameObject customer{
+    public static GameObject customer
+    {
         get => _customer;
-        set{
-            if(_customer != null )
+        set
+        {
+            if (_customer != null)
             {
                 _customer.GetComponent<Customer>().enabled = false;
                 _customer?.transform.Find("isHearing").gameObject.SetActive(false);
             }
-            _customer=value;
+            _customer = value;
             _customer.GetComponent<Customer>().enabled = true;
             _customer.transform.Find("isHearing").gameObject.SetActive(true);
-            state=State.q1;
-            money=0;
+            state = State.q1;
+            money = 0;
             DialogflowWebRequest.Refresh();
         }
     }
@@ -38,7 +40,7 @@ public class Dialogflow : MonoBehaviour
     public IEnumerator Request(byte[] speech)
     {
         //set the content of text mesh pro
-        subtitle.GetComponent<TMP_Text>().text = "處理中...";
+        subtitle.GetComponent<TMP_Text>().text = "顧客: (讓我想想...)";
 
         // UnityWebRequest req =
         //     new UnityWebRequest("https://dialogflow.googleapis.com/v2/projects/" +
@@ -46,11 +48,14 @@ public class Dialogflow : MonoBehaviour
         //         "/agent/sessions/34563:detectIntent",
         //         "POST");
         RequestBody requestBody =
-            new RequestBody {
+            new RequestBody
+            {
                 queryInput =
-                    new QueryInput {
+                    new QueryInput
+                    {
                         audioConfig =
-                            new AudioConfig {
+                            new AudioConfig
+                            {
                                 audioEncoding =
                                     AudioEncoding.AUDIO_ENCODING_UNSPECIFIED,
                                 sampleRateHertz = 24000,
@@ -59,14 +64,15 @@ public class Dialogflow : MonoBehaviour
                     },
                 inputAudio = System.Convert.ToBase64String(speech)
             };
-        if(state==State.q2p||state==State.exit){
+        if (state == State.q2p || state == State.exit)
+        {
             var prm = new QueryParameters();
             prm.contexts = new Context[1];
-            if(state==State.q2p)
-                prm.contexts[0]=new Context("payment",3);
+            if (state == State.q2p)
+                prm.contexts[0] = new Context("payment", 3);
             else
-                prm.contexts[0]=new Context("exit",3);
-            requestBody.queryParams=prm;
+                prm.contexts[0] = new Context("exit", 3);
+            requestBody.queryParams = prm;
         }
 
         // string jsonRequestBody = JsonUtility.ToJson(requestBody, true);
@@ -77,7 +83,7 @@ public class Dialogflow : MonoBehaviour
         // req.uploadHandler = (UploadHandler) new UploadHandlerRaw(bodyRaw);
         // req.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
         var req = DialogflowWebRequest.DetectIntent();
-        PackMessage (req, requestBody);
+        PackMessage(req, requestBody);
         yield return req.SendWebRequest();
 
         if (
@@ -94,7 +100,7 @@ public class Dialogflow : MonoBehaviour
             byte[] resultbyte = req.downloadHandler.data;
             string result = System.Text.Encoding.UTF8.GetString(resultbyte);
             ResponseBody content =
-                (ResponseBody) JsonUtility.FromJson<ResponseBody>(result);
+                (ResponseBody)JsonUtility.FromJson<ResponseBody>(result);
             Debug.Log(content.queryResult.queryText);
             Debug.Log(content.queryResult.fulfillmentText);
             if (content.queryResult.fulfillmentText != null)
@@ -117,28 +123,28 @@ public class Dialogflow : MonoBehaviour
                 case "q1":
                     if (UnityEngine.Random.Range(0f, 1f) > 0.5)
                         state = State.q2p;
-                    else 
+                    else
                         state = State.q2;
                     break;
-     
+
                 case "q2":
-                    m=regex.Match(text);
-                    money=Int32.Parse(m.Groups[1].ToString());
-                    state=State.paying;
-                    TaskPanel.target=money;
+                    m = regex.Match(text);
+                    money = Int32.Parse(m.Groups[1].ToString());
+                    state = State.paying;
+                    TaskPanel.target = money;
                     // Debug.Log(money);
                     Pay();
                     break;
                 case "q2+":
-                    state=State.credit;
-                    m=regex.Match(text);
-                    money=Int32.Parse(m.Groups[1].ToString());
-                    TaskPanel.target=money;
+                    state = State.credit;
+                    m = regex.Match(text);
+                    money = Int32.Parse(m.Groups[1].ToString());
+                    TaskPanel.target = money;
                     Debug.Log(money);
                     break;
                 case "credit":
                     // StartCoroutine(customer.GetComponent<Customer>().Leave(3));
-                    state=State.paying;
+                    state = State.paying;
                     Pay();
                     break;
                 case "paying":
@@ -163,11 +169,11 @@ public class Dialogflow : MonoBehaviour
     {
         var sm = gameObject.GetComponent<ShowMoney>();
         sm.ClearTable();
-        int n = money/50;
-        int t = UnityEngine.Random.Range(1,n+1)*50;
+        int n = money / 50;
+        int t = UnityEngine.Random.Range(1, n + 1) * 50;
         sm.ShowAmount(t);
-        money-=t;
-        Debug.Log(t+" paid, "+money+" left.");
+        money -= t;
+        Debug.Log(t + " paid, " + money + " left.");
     }
 
     public void Start()
@@ -177,7 +183,7 @@ public class Dialogflow : MonoBehaviour
             this.GetComponent<GoogleOAuth>().projectID;
         DialogflowWebRequest.Refresh();
     }
-    public enum State{q1,q2,q2p,credit,paying,exit};
+    public enum State { q1, q2, q2p, credit, paying, exit };
 
     public static class DialogflowWebRequest
     {
@@ -219,8 +225,8 @@ public class Dialogflow : MonoBehaviour
         req
             .SetRequestHeader("Authorization",
             "Bearer " + this.GetComponent<GoogleOAuth>().token);
-        req.uploadHandler = (UploadHandler) new UploadHandlerRaw(bodyRaw);
-        req.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
+        req.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
+        req.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
         return;
     }
 
@@ -238,7 +244,7 @@ public class Dialogflow : MonoBehaviour
 
         public Context(string s, int t)
         {
-            Debug.Log (name);
+            Debug.Log(name);
             lifespanCount = t;
             this.name =
                 "projects/" +
@@ -251,8 +257,9 @@ public class Dialogflow : MonoBehaviour
     }
 
     [Serializable]
-    public class QueryParameters{
-       public Context[] contexts;
+    public class QueryParameters
+    {
+        public Context[] contexts;
 
     }
 
