@@ -16,35 +16,5 @@ public class SettingPanel : BasePanel
             InGameUI.resetPause();
             PanelManager.Pop();
         });
-        UITool.GetOrAddComponentInChildren<Toggle>("ToggleLow").onValueChanged.AddListener(isOn =>
-    {
-        if (isOn)
-        {
-
-            Settings.getInstance().settings["jumpqueue"] = true;
-            Settings.getInstance().settings["randomMoney"] = true;
-        }
-    });
-
-        UITool.GetOrAddComponentInChildren<Toggle>("ToggleMid").onValueChanged.AddListener(isOn =>
-    {
-        if (isOn)
-        {
-
-            Settings.getInstance().settings["jumpqueue"] = true;
-            Settings.getInstance().settings["randomMoney"] = true;
-        }
-    });
-
-        UITool.GetOrAddComponentInChildren<Toggle>("ToggleHigh").onValueChanged.AddListener(isOn =>
-    {
-        if (isOn)
-        {
-
-            Settings.getInstance().settings["jumpqueue"] = true;
-            Settings.getInstance().settings["randomMoney"] = true;
-        }
-    });
     }
-
 }
