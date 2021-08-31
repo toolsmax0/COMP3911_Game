@@ -21,12 +21,14 @@ public class SettingPanel : BasePanel
         UITool.GetOrAddComponentInChildren<Slider>("JQSlider").onValueChanged.AddListener((float value) =>
         {
             Settings.jumpQueueProb = value;
+            Debug.Log(value);
         });
 
         UITool.GetOrAddComponentInChildren<Slider>("PaymentSlider").value = (float)Settings.paymentProb;
         UITool.GetOrAddComponentInChildren<Slider>("PaymentSlider").onValueChanged.AddListener((float value) =>
         {
             Settings.paymentProb = value;
+            Debug.Log(value);
         });
 
         UITool.GetOrAddComponentInChildren<Toggle>("Toggle_1").isOn = (Settings.maxNumOfCustomers == 1) ? true : false;
