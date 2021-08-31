@@ -145,6 +145,7 @@ public class Dialogflow : MonoBehaviour
                     Pay();
                     break;
                 case "exit":
+                    gameObject.GetComponent<ShowMoney>().ClearTable();
                     StartCoroutine(customer.GetComponent<Customer>().Leave(3));
                     break;
                 default:
@@ -162,12 +163,15 @@ public class Dialogflow : MonoBehaviour
     public void Pay()
     {
         var sm = gameObject.GetComponent<ShowMoney>();
-        sm.ClearTable();
         int n = money/50;
         int t = UnityEngine.Random.Range(1,n+1)*50;
         sm.ShowAmount(t);
         money-=t;
         Debug.Log(t+" paid, "+money+" left.");
+    }
+    public void Pay2()
+    {
+
     }
 
     public void Start()
