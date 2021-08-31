@@ -82,7 +82,7 @@ public class DamagePanel : BasePanel
                 {
                     UITool
                     .GetOrAddComponentInChildren
-                    <Image>("InputField1")
+                    <Image>("InputField2")
                     .color = UnityEngine.Color.red;
                 }
 
@@ -108,7 +108,7 @@ public class DamagePanel : BasePanel
                 {
                     UITool
                     .GetOrAddComponentInChildren
-                    <Image>("InputField1")
+                    <Image>("InputField3")
                     .color = UnityEngine.Color.red;
                 }
             });
@@ -132,7 +132,7 @@ public class DamagePanel : BasePanel
                 {
                     UITool
                     .GetOrAddComponentInChildren
-                    <Image>("InputField1")
+                    <Image>("InputField4")
                     .color = UnityEngine.Color.red;
                 }
             });
@@ -156,7 +156,7 @@ public class DamagePanel : BasePanel
                 {
                     UITool
                     .GetOrAddComponentInChildren
-                    <Image>("InputField1")
+                    <Image>("InputField5")
                     .color = UnityEngine.Color.red;
                 }
             });
@@ -179,7 +179,7 @@ public class DamagePanel : BasePanel
                 {
                     UITool
                     .GetOrAddComponentInChildren
-                    <Image>("InputField1")
+                    <Image>("InputField6")
                     .color = UnityEngine.Color.red;
                 }
             });
