@@ -16,5 +16,31 @@ public class SettingPanel : BasePanel
             InGameUI.resetPause();
             PanelManager.Pop();
         });
+
+        UITool.GetOrAddComponentInChildren<Slider>("JQSlider").onValueChanged.AddListener((float value) =>
+        {
+            Settings.jumpQueueProb = value;
+        });
+
+        UITool.GetOrAddComponentInChildren<Slider>("JQSlider").onValueChanged.AddListener((float value) =>
+        {
+            Settings.paymentProb = value;
+        });
+
+        UITool.GetOrAddComponentInChildren<Toggle>("Toggle_1").onValueChanged.AddListener((bool value) =>
+        {
+            if (value)
+                Settings.maxNumOfCustomers = 1;
+        });
+        UITool.GetOrAddComponentInChildren<Toggle>("Toggle_2").onValueChanged.AddListener((bool value) =>
+        {
+            if (value)
+                Settings.maxNumOfCustomers = 2;
+        });
+        UITool.GetOrAddComponentInChildren<Toggle>("Toggle_3").onValueChanged.AddListener((bool value) =>
+        {
+            if (value)
+                Settings.maxNumOfCustomers = 3;
+        });
     }
 }
