@@ -53,7 +53,6 @@ public class DamagePanel : BasePanel
                         <Image>("InputField1")
                         .color = UnityEngine.Color.green;
                     cb = UnityEngine.Color.green;
-
                 }
             });
 

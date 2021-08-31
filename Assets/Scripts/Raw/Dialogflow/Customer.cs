@@ -11,7 +11,6 @@ public class Customer : MonoBehaviour
     void Start()
     {
 
-        script.GetComponent<ShowMoney>().ShowAmount(200, greedy: false);
         // StartCoroutine(StartCaptureAfterTime(0f, 4f));
     }
 
