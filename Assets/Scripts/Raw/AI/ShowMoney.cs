@@ -101,11 +101,16 @@ class ShowMoney : MonoBehaviour
     private int[] Decompose(int amount, bool greedy)
     {
         int remain = amount;
-        if (greedy)
-            return new int[] { remain % 20 / 10, remain % 50 / 20, remain % 100 / 50, remain / 100 };
 
         //else randomized
         int[] money_amounts = new int[4] { 0, 0, 0, 0 };
+        if (greedy)
+        {
+            money_amounts[3] = remain /= 100;
+            money_amounts[2] = remain /= 50;
+            money_amounts[1] = remain /= 20;
+            money_amounts[0] = remain /= 10;
+        }
 
         //decompose the amount into 10, 20, 50, 100
         while (remain > 0)
@@ -137,8 +142,11 @@ class ShowMoney : MonoBehaviour
             }
             if (remain >= 10)
             {
-                money_amounts[0]++;
-                remain -= 10;
+                if (Random.Range(0, 2) == 0)
+                {
+                    money_amounts[0]++;
+                    remain -= 10;
+                }
             }
         }
         return money_amounts;

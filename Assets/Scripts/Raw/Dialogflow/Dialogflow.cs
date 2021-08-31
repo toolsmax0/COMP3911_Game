@@ -34,6 +34,7 @@ public class Dialogflow : MonoBehaviour
     }
 
     public GameObject subtitle;
+    public GameObject playerSubtitle;
 
     //Detect intent with audio input(speech) using Dialogflow API
     //Reference: https://cloud.google.com/dialogflow/es/docs/how/detect-intent-audio#detect-intent-audio-drest
@@ -64,6 +65,7 @@ public class Dialogflow : MonoBehaviour
                     },
                 inputAudio = System.Convert.ToBase64String(speech)
             };
+
         if (state == State.q2p || state == State.exit)
         {
             var prm = new QueryParameters();
@@ -105,6 +107,8 @@ public class Dialogflow : MonoBehaviour
             Debug.Log(content.queryResult.fulfillmentText);
             if (content.queryResult.fulfillmentText != null)
             {
+                playerSubtitle.GetComponent<TMP_Text>().text =
+                "你: " + content.queryResult.queryText;
                 subtitle.GetComponent<TMP_Text>().text =
                     "顧客: " + content.queryResult.fulfillmentText;
                 StartCoroutine(this
@@ -169,8 +173,8 @@ public class Dialogflow : MonoBehaviour
     public void Pay()
     {
         var sm = gameObject.GetComponent<ShowMoney>();
-        int n = money/50;
-        int t = UnityEngine.Random.Range(1,n+1)*50;
+        int n = money / 50;
+        int t = UnityEngine.Random.Range(1, n + 1) * 50;
         sm.ShowAmount(t);
         money -= t;
         Debug.Log(t + " paid, " + money + " left.");
