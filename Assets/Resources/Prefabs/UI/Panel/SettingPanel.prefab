@@ -517,7 +517,7 @@ GameObject:
   - component: {fileID: 594859260}
   - component: {fileID: 594859261}
   m_Layer: 5
-  m_Name: Toggle (2)
+  m_Name: Toggle_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1349,7 +1349,7 @@ GameObject:
   - component: {fileID: 1435585648}
   - component: {fileID: 1435585649}
   m_Layer: 5
-  m_Name: Toggle (1)
+  m_Name: Toggle_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2925,7 +2925,7 @@ GameObject:
   - component: {fileID: 8880970554088917031}
   - component: {fileID: 6145118347930888848}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: Toggle_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
