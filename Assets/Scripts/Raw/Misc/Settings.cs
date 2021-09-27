@@ -6,7 +6,7 @@ public class Settings : MonoBehaviour
 {
 
     public Slider jumpQueueSlider;
-    public static double jumpQueueProb = 0.5; // 顾客是否插队
+    public static double jumpQueueProb = 0; // 顾客是否插队
 
     
 

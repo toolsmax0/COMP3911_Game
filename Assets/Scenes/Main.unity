@@ -1471,6 +1471,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interaction
       objectReference: {fileID: 0}
+    - target: {fileID: 8257078025053417524, guid: dc981c4b89919b14ab302d85068c1d02,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8257078025053417525, guid: dc981c4b89919b14ab302d85068c1d02,
         type: 3}
       propertyPath: m_Pivot.x
