@@ -1366,7 +1366,7 @@ PrefabInstance:
     - target: {fileID: 2084758324, guid: dc981c4b89919b14ab302d85068c1d02, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 87b2a3ba088238246bdbcecdb9569c1e,
+      objectReference: {fileID: 11400000, guid: 740992b9cf5fba94ab26b330cdee1d11,
         type: 2}
     - target: {fileID: 2084758324, guid: dc981c4b89919b14ab302d85068c1d02, type: 3}
       propertyPath: m_fontStyle
@@ -1375,7 +1375,7 @@ PrefabInstance:
     - target: {fileID: 2084758324, guid: dc981c4b89919b14ab302d85068c1d02, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -5182155672889669026, guid: 87b2a3ba088238246bdbcecdb9569c1e,
+      objectReference: {fileID: -4960359397443246953, guid: 740992b9cf5fba94ab26b330cdee1d11,
         type: 2}
     - target: {fileID: 2084758324, guid: dc981c4b89919b14ab302d85068c1d02, type: 3}
       propertyPath: m_enableVertexGradient
@@ -1443,13 +1443,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 87b2a3ba088238246bdbcecdb9569c1e,
+      objectReference: {fileID: 11400000, guid: 740992b9cf5fba94ab26b330cdee1d11,
         type: 2}
     - target: {fileID: 5173457126029879779, guid: dc981c4b89919b14ab302d85068c1d02,
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -5182155672889669026, guid: 87b2a3ba088238246bdbcecdb9569c1e,
+      objectReference: {fileID: -4960359397443246953, guid: 740992b9cf5fba94ab26b330cdee1d11,
         type: 2}
     - target: {fileID: 6290842516618103496, guid: dc981c4b89919b14ab302d85068c1d02,
         type: 3}
