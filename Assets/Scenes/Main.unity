@@ -1375,7 +1375,7 @@ PrefabInstance:
     - target: {fileID: 2084758324, guid: dc981c4b89919b14ab302d85068c1d02, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -8962460094191300935, guid: 87b2a3ba088238246bdbcecdb9569c1e,
+      objectReference: {fileID: -5182155672889669026, guid: 87b2a3ba088238246bdbcecdb9569c1e,
         type: 2}
     - target: {fileID: 2084758324, guid: dc981c4b89919b14ab302d85068c1d02, type: 3}
       propertyPath: m_enableVertexGradient
