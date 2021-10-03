@@ -2,19 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 class ShowMoney : MonoBehaviour
 {
-
     [Tooltip("Money prefabs")]
     public GameObject money_100;
+
     public GameObject money_50;
+
     public GameObject money_20;
+
     public GameObject money_10;
+
     public Transform base_position;
 
     private Transform offset;
+
     private Transform next_pos;
+
     private int crt_amount = 0;
 
     private List<GameObject> showed_money;
@@ -27,10 +31,10 @@ class ShowMoney : MonoBehaviour
         next_pos = new GameObject().transform;
         next_pos.position = base_position.transform.position;
     }
+
     /// <summary>
     /// Show money on the table
     /// </param> greedy: if true, the money combination will  greedy (large money first), otherwise random
-
     /// </summary>
     public void ShowAmount(int amount, bool greedy = true)
     {
@@ -40,10 +44,20 @@ class ShowMoney : MonoBehaviour
             throw new System.Exception("ShowMoney: amount must be a multiple of 10");
         }
         int[] money = Decompose(amount, greedy);
-        Debug.Log("Attempt to ShowMoney: " + amount + " = " + money[0] + " * 10 + " + money[1] + " * 20 + " + money[2] + " * 50 + " + money[3] + " * 100");
+        Debug
+            .Log("Attempt to ShowMoney: " +
+            amount +
+            " = " +
+            money[0] +
+            " * 10 + " +
+            money[1] +
+            " * 20 + " +
+            money[2] +
+            " * 50 + " +
+            money[3] +
+            " * 100");
         for (int i = 0; i < money.Length; i++)
         {
-
             GameObject money_object = null;
             switch (i)
             {
@@ -68,18 +82,20 @@ class ShowMoney : MonoBehaviour
             for (int j = 0; j < money[i]; j++)
             {
                 next_pos.position += offset.position;
+
                 // Debug.Log("ShowMoney: " + next_pos.position);
                 //rotate 90 along x-axis
+                GameObject new_money =
+                    Instantiate(money_object,
+                    next_pos.position,
+                    money_object.transform.rotation);
 
-                GameObject new_money = Instantiate(money_object, next_pos.position, money_object.transform.rotation);
                 //randomize rotation
                 new_money.transform.parent = base_position;
-                showed_money.Add(new_money);
+                showed_money.Add (new_money);
             }
-
         }
     }
-
 
     public int GetMoneyAmountOnTable()
     {
@@ -90,12 +106,11 @@ class ShowMoney : MonoBehaviour
     {
         foreach (GameObject go in showed_money)
         {
-            Destroy(go);
+            Destroy (go);
         }
         showed_money.Clear();
         crt_amount = 0;
         next_pos.position = base_position.transform.position;
-
     }
 
     private int[] Decompose(int amount, bool greedy)
@@ -107,9 +122,18 @@ class ShowMoney : MonoBehaviour
         if (greedy)
         {
             money_amounts[3] = remain / 100;
+
+            // Debug.Log("remain = "+remain+", "+money_amounts[3]+"*100 needed");
             money_amounts[2] = (remain %= 100) / 50;
+
+            // Debug.Log("remain = "+remain+", "+money_amounts[2]+"*50 needed");
             money_amounts[1] = (remain %= 50) / 20;
+
+            // Debug.Log("remain = "+remain+", "+money_amounts[1]+"*20 needed");
             money_amounts[0] = (remain %= 20) / 10;
+
+            // Debug.Log("remain = "+remain+", "+money_amounts[0]+"*10 needed");
+            return money_amounts;
         }
 
         //decompose the amount into 10, 20, 50, 100
@@ -152,8 +176,6 @@ class ShowMoney : MonoBehaviour
         return money_amounts;
     }
 
-
-
     public void Main()
     {
         for (int i = 0; i < 1000; i++)
@@ -163,7 +185,18 @@ class ShowMoney : MonoBehaviour
             int[] res = Decompose(n, false);
             if (res[0] * 10 + res[1] * 20 + res[2] * 50 + res[3] * 100 != n)
             {
-                Debug.Log("Error: " + n + " = " + res[0] + " * 10 + " + res[1] + " * 20 + " + res[2] + " * 50 + " + res[3] + " * 100");
+                Debug
+                    .Log("Error: " +
+                    n +
+                    " = " +
+                    res[0] +
+                    " * 10 + " +
+                    res[1] +
+                    " * 20 + " +
+                    res[2] +
+                    " * 50 + " +
+                    res[3] +
+                    " * 100");
             }
         }
     }

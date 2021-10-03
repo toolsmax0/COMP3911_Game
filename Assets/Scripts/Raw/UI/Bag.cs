@@ -8,7 +8,7 @@ public class Bag : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        BagPanel.numBag=UnityEngine.Random.Range(20,31);
+        BagPanel.numBag=UnityEngine.Random.Range(8,16);
         gameObject.GetComponent<TMP_Text>().text="一共需要"+BagPanel.numBag+"个垃圾袋.";
         
     }

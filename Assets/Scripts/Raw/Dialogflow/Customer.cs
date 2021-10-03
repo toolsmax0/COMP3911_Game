@@ -10,17 +10,22 @@ public class Customer : MonoBehaviour
 
     void Start()
     {
-
         // StartCoroutine(StartCaptureAfterTime(0f, 4f));
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            script.GetComponent<MicrophoneCapture>().StartCapture();
-        if (Input.GetKeyUp(KeyCode.Space))
-            script.GetComponent<MicrophoneCapture>().StopCapture();
+        // if (Input.GetKeyDown(KeyCode.Space))
+        //     script.GetComponent<MicrophoneCapture>().StartCapture();
+        // if (Input.GetKeyUp(KeyCode.Space))
+        //     script.GetComponent<MicrophoneCapture>().StopCapture();
+        if (Dialogflow.state == Dialogflow.State.exit)
+        {
+            Dialogflow.state = 0;
+            GameObject.Find("Script").GetComponent<ShowMoney>().ClearTable();
+            StartCoroutine(Leave(3));
+        }
     }
 
     // public IEnumerator StartCaptureAfterTime(float startTime, float Endtime)
@@ -48,12 +53,18 @@ public class Customer : MonoBehaviour
             GameObject.FindGameObjectWithTag("Finish").transform;
         Queuing.getInstance().DeQueue();
         yield return new WaitForSeconds(time);
-        Destroy(gameObject);
+        Destroy (gameObject);
     }
 
     void OnMouseDown()
     {
-        Dialogflow.customer = gameObject;
+        if (Queuing.getInstance().Peek() == gameObject)
+        {
+            Dialogflow.customer = gameObject;
+            int n = UnityEngine.Random.Range(1, 21) * 10;
+            Dialogflow.money = n;
+            GameObject.Find("Script").GetComponent<ShowMoney>().ShowAmount(n);
+        }
     }
 
     private void OnDestroy()
