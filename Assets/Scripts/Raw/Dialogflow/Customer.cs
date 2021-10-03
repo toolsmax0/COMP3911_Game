@@ -63,6 +63,7 @@ public class Customer : MonoBehaviour
             Dialogflow.customer = gameObject;
             int n = UnityEngine.Random.Range(1, 21) * 10;
             Dialogflow.money = n;
+            GameObject.Find("Script").GetComponent<ShowMoney>().ClearTable();
             GameObject.Find("Script").GetComponent<ShowMoney>().ShowAmount(n);
         }
     }
