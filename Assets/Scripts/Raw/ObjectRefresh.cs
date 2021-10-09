@@ -13,14 +13,19 @@ public class ObjectRefresh : MonoBehaviour
 
     GameObject[] scene_2;
 
+    static GameObject[] plastic_bag;
+
+    static int randomvalueforpb = 0;
+
     static int randomvalue = 0;
     void Start()
     {
         scene_0 = GameObject.FindGameObjectsWithTag("SceneSetting_0");
         scene_1 = GameObject.FindGameObjectsWithTag("SceneSetting_1");
         scene_2 = GameObject.FindGameObjectsWithTag("SceneSetting_2");
+        plastic_bag= GameObject.FindGameObjectsWithTag("plastic_bag");
 
-        
+
         foreach (GameObject scene0 in scene_0)
         {
             scene0.SetActive(false);
@@ -33,6 +38,12 @@ public class ObjectRefresh : MonoBehaviour
         {
             scene2.SetActive(false);
         }
+
+        foreach (GameObject plasticbag in plastic_bag)
+        {
+            plasticbag.SetActive(false);
+        }
+
     }
 
     void OnMouseDown()
@@ -42,7 +53,14 @@ public class ObjectRefresh : MonoBehaviour
             opened = true;
             gameObject.GetComponent<Dooranimated>().OpenDoor();
             randomvalue = Random.Range(0, 3);
-
+            randomvalueforpb = Random.Range(0, 16);
+            
+            for (int i=0; i<=randomvalueforpb; i++)
+            {
+                int newindex = Random.Range(0, plastic_bag.Length);
+                plastic_bag[newindex].SetActive(true);
+            }
+            
             foreach (GameObject scene0 in scene_0)
             {
                 scene0.SetActive(randomvalue == 0);
@@ -64,13 +82,14 @@ public class ObjectRefresh : MonoBehaviour
     }
 
     static public int GetNumOfBags() // Get the number of plastic bags on the table
-    {
-        if (randomvalue == 0)
-            return 4;
-        if (randomvalue == 1)
-            return 7;
-        else
-            return 5;   
+    { 
+        int num = 0;
+        for (int i = 0; i <16; i++)
+        {
+            if (plastic_bag[i].activeSelf)
+                num++;
+        }
+        return num;
     }
 
     static public int GetNumOfBrokenBottles()
