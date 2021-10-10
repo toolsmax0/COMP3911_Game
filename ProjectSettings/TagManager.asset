@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Script
   - Wait
+  - SceneSetting_0
+  - SceneSetting_2
+  - SceneSetting_1
+  - plastic_bag
   layers:
   - Default
   - TransparentFX
