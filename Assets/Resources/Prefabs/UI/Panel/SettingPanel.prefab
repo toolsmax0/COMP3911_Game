@@ -591,7 +591,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_IsOn: 0
+  m_IsOn: 1
 --- !u!1 &649770610
 GameObject:
   m_ObjectHideFlags: 0
@@ -4520,11 +4520,11 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4811771706194632575}
   toggleTransition: 1
   graphic: {fileID: 2333428272164577982}
-  m_Group: {fileID: 1542778182546791437}
+  m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &8433559405785763486
 GameObject:
   m_ObjectHideFlags: 0
