@@ -16,4 +16,6 @@ public class Settings : MonoBehaviour
 
     public static double paymentProb = 0.5; // 顾客询问支付手段的概率
 
+    public static bool voiceEnabled = false;
+
 }
