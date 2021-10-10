@@ -1858,6 +1858,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 772002563224740697, guid: 33504352f5741b84d881f9a007f9e9c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: plastic_bag
+      objectReference: {fileID: 0}
     - target: {fileID: 783363521430076320, guid: 33504352f5741b84d881f9a007f9e9c1,
         type: 3}
       propertyPath: m_CastShadows
@@ -1948,10 +1953,85 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1825559300700645105, guid: 33504352f5741b84d881f9a007f9e9c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: plastic_bag
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825559301121000271, guid: 33504352f5741b84d881f9a007f9e9c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: plastic_bag
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825559301127494483, guid: 33504352f5741b84d881f9a007f9e9c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: plastic_bag
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825559301195563824, guid: 33504352f5741b84d881f9a007f9e9c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: plastic_bag
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825559301218821280, guid: 33504352f5741b84d881f9a007f9e9c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: plastic_bag
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825559301374142714, guid: 33504352f5741b84d881f9a007f9e9c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: plastic_bag
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825559301479055433, guid: 33504352f5741b84d881f9a007f9e9c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: plastic_bag
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825559301503389702, guid: 33504352f5741b84d881f9a007f9e9c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: plastic_bag
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825559301553552611, guid: 33504352f5741b84d881f9a007f9e9c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: plastic_bag
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825559301586315893, guid: 33504352f5741b84d881f9a007f9e9c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: plastic_bag
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825559301798930177, guid: 33504352f5741b84d881f9a007f9e9c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: plastic_bag
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825559301970688312, guid: 33504352f5741b84d881f9a007f9e9c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: plastic_bag
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825559302061438460, guid: 33504352f5741b84d881f9a007f9e9c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: plastic_bag
+      objectReference: {fileID: 0}
     - target: {fileID: 1825559302167082747, guid: 33504352f5741b84d881f9a007f9e9c1,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.311
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825559302167082748, guid: 33504352f5741b84d881f9a007f9e9c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: plastic_bag
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825559302684949700, guid: 33504352f5741b84d881f9a007f9e9c1,
+        type: 3}
+      propertyPath: m_TagString
+      value: plastic_bag
       objectReference: {fileID: 0}
     - target: {fileID: 1863728237887560805, guid: 33504352f5741b84d881f9a007f9e9c1,
         type: 3}
