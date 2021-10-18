@@ -49,5 +49,10 @@ public class SettingPanel : BasePanel
             if (value)
                 Settings.maxNumOfCustomers = 3;
         });
+        UITool.GetOrAddComponentInChildren<Toggle>("SoundToggle").isOn = Settings.voiceEnabled;
+        UITool.GetOrAddComponentInChildren<Toggle>("SoundToggle").onValueChanged.AddListener((bool value) =>
+        {
+            Settings.voiceEnabled = value;
+        });
     }
 }
