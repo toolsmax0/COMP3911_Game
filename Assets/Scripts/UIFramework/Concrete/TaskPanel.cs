@@ -106,8 +106,9 @@ public class TaskPanel : BasePanel
     {
         int t = Int32.Parse(UITool.GetOrAddComponentInChildren<TMP_Text>("ContentText").text);
         Debug.Log("Target " + target + ", " + t + " paid, " + Dialogflow.money + " left.");
-        if (Dialogflow.state == Dialogflow.State.paying && 
-            Dialogflow.money == 0 && t == target)
+        // if (Dialogflow.state == Dialogflow.State.paying && 
+        //     Dialogflow.money == 0 && t == target)
+        if(t == Dialogflow.money)
         {
             Dialogflow.state = Dialogflow.State.exit;
             Debug.Log("exit");
