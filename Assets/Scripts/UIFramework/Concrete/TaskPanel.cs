@@ -111,6 +111,7 @@ public class TaskPanel : BasePanel
         if(t == Dialogflow.money)
         {
             Dialogflow.state = Dialogflow.State.exit;
+            GameObject.FindGameObjectWithTag("Cashier").GetComponent<AudioSource>().Play();
             Debug.Log("exit");
         }
     }

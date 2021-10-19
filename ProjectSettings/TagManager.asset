@@ -10,6 +10,7 @@ TagManager:
   - SceneSetting_2
   - SceneSetting_1
   - plastic_bag
+  - Cashier
   layers:
   - Default
   - TransparentFX
