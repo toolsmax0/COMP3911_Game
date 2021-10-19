@@ -60,7 +60,8 @@ public class Dialogflow : MonoBehaviour
                                 audioEncoding =
                                     AudioEncoding.AUDIO_ENCODING_UNSPECIFIED,
                                 sampleRateHertz = 24000,
-                                languageCode = "zh-HK"
+                                // languageCode = "zh-HK"
+                                 languageCode = "en"
                             }
                     },
                 inputAudio = System.Convert.ToBase64String(speech)

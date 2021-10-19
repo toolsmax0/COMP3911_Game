@@ -17,8 +17,10 @@ public class TextToSpeech : MonoBehaviour
         requestBody.voice = new VoiceSelectionParams();
         requestBody.audioConfig = new AudioConfig();
         requestBody.input.text = fulfillmentText;
-        requestBody.voice.languageCode = "yue-HK";
-        requestBody.voice.name = "yue-HK-Standard-B";
+        requestBody.voice.languageCode = "en-US";
+        // requestBody.voice.languageCode = "yue-HK";
+        requestBody.voice.name = "en-US-Wavenet-D";
+        // requestBody.voice.name = "yue-HK-Standard-B";
         requestBody.voice.ssmlGender = "MALE";
         requestBody.audioConfig.audioEncoding = "LINEAR16";
 

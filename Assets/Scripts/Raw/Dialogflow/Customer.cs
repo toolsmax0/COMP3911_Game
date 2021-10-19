@@ -16,11 +16,14 @@ public class Customer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (Input.GetKeyDown(KeyCode.Space))
-        //     script.GetComponent<MicrophoneCapture>().StartCapture();
-        // if (Input.GetKeyUp(KeyCode.Space))
-        //     script.GetComponent<MicrophoneCapture>().StopCapture();
-        if (Dialogflow.state == Dialogflow.State.exit)
+        if (Input.GetKeyDown(KeyCode.Space))
+            script.GetComponent<MicrophoneCapture>().StartCapture();
+        if (Input.GetKeyUp(KeyCode.Space))
+            script.GetComponent<MicrophoneCapture>().StopCapture();
+        if (
+            Dialogflow.state == Dialogflow.State.exit &&
+            Settings.voiceEnabled == false
+        )
         {
             Dialogflow.state = 0;
             GameObject.Find("Script").GetComponent<ShowMoney>().ClearTable();
