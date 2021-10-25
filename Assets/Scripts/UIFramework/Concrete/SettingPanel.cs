@@ -54,5 +54,10 @@ public class SettingPanel : BasePanel
         {
             Settings.voiceEnabled = value;
         });
+        UITool.GetOrAddComponentInChildren<Toggle>("GreedyToggle").isOn = Settings.greedy;
+        UITool.GetOrAddComponentInChildren<Toggle>("GreedyToggle").onValueChanged.AddListener((bool value) =>
+        {
+            Settings.greedy = value;
+        });
     }
 }

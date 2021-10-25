@@ -64,7 +64,7 @@ public class Customer : MonoBehaviour
         if (Queuing.getInstance().Peek() == gameObject)
         {
             Dialogflow.customer = gameObject;
-            int n = UnityEngine.Random.Range(1, 21) * 10;
+            int n = UnityEngine.Random.Range(1, 31) * 10;
             Dialogflow.money = n;
             GameObject.Find("Script").GetComponent<ShowMoney>().ClearTable();
             GameObject.Find("Script").GetComponent<ShowMoney>().ShowAmount(n);

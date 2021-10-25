@@ -43,7 +43,7 @@ class ShowMoney : MonoBehaviour
         {
             throw new System.Exception("ShowMoney: amount must be a multiple of 10");
         }
-        int[] money = Decompose(amount, greedy);
+        int[] money = Decompose(amount, Settings.greedy);
         Debug
             .Log("Attempt to ShowMoney: " +
             amount +

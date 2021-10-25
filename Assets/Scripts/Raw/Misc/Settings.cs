@@ -18,4 +18,6 @@ public class Settings : MonoBehaviour
 
     public static bool voiceEnabled = false;
 
+    public static bool greedy = true;
+
 }
